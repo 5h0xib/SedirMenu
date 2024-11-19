@@ -1,0 +1,65 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: linear-gradient(rgb(255, 255, 255),rgb(255, 255, 255));
+    background-position: fixed;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font-weight: 400;
+    padding: 0px;
+    margin: 0px;
+}
+
+.Main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Animations */
+
+main.ng-enter{
+    transition: 0.6s linear all;
+    opacity: 0;
+}
+
+main.ng-enter.ng-enter-active{
+    opacity: 1;
+}
+
+
+#song-list li.ng-enter {
+    transition: 0.6s linear all;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#song-list li.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#song-list li.ng-leave {
+    transition: 0.2s linear all;
+    opacity: 0.5;
+    transform: translateX(0px);
+}
+
+#song-list li.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+#song-list li.ng-leave-stagger{
+    transition-delay: 0.1;
+    transition-duration: 0;
+}
+

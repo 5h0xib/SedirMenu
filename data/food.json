@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Cheir cheri lady",
+        "rate": 25,
+        "color": "green",
+        "available": true
+    },
+    {
+        "name": "Dancin(Krono Remix)",
+        "rate": 6,
+        "color": "blue",
+        "available": true
+    },
+    {
+        "name": "Dusk till dawn",
+        "rate": 5,
+        "color": "aqua",
+        "available": true
+    },
+    {
+        "name": "Gansta's Parradise",
+        "rate": 70,
+        "color": "black",
+        "available": true
+    },
+    {
+        "name": "Not like us",
+        "rate": 80,
+        "color": "pink",
+        "available": true
+    },
+    {
+        "name": "The Spectre",
+        "rate": 50,
+        "color": "red",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "The Box",
+        "rate": 10,
+        "color": "purple",
+        "available": true
+    },
+    {
+        "name": "KEEP UP",
+        "rate": 60,
+        "color": "cyan",
+        "available": true
+    }
+]
