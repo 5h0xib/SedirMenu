@@ -1,16 +1,15 @@
 <div class="nav-main">
     <div id="nav-bar">
-        <button>EN</button>
         <div class="logo">
             <h1>SEDiR</h1>
             <p>Turkish Gurment</p>
         </div>
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div id="google_translate_element"></div>
     </div>
     <div class="sticky-nav1">
-        <a href="#!/All">All</a>
-        <a href="#!/home">Food</a>
-        <a href="#!/directory">Bevrages</a>
+        <a href="#!/all">All</a>
+        <a href="#!/food">Food</a>
+        <a href="#!/bevrages">Bevrages</a>
     </div>
 </div>
 
@@ -34,22 +33,16 @@
     margin: 10px;
     height: 30px;
     padding: 20px;
-    width: 300px;
 }
+
+/* #nav-bar #google_translate_element{
+    width: 50px;
+} */
 
 #nav-bar .logo{
     text-align: center;
     width: 150px;
     cursor: context-menu;
-}
-
-#nav-bar button{
-    height: 30px;
-    width: 30px;
-    padding: 0px;
-    border: none;
-    border-radius: 50px;
-    border: 1px solid rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 768px) {

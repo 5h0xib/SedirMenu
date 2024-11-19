@@ -8,18 +8,22 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider,$lo
     $routeProvider
     .when('/food', {
         templateUrl: 'views/food.html',
-        controller: 'FoodController'
+        controller: 'AppController'
     })
     .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactController'
     })
-    .when('/directory', {
-        templateUrl: 'views/directory.html',
+    .when('/all', {
+        templateUrl: 'views/all.html',
+        controller: 'AppController'
+    })
+    .when('/bevrages', {
+        templateUrl: 'views/bevrages.html',
         controller: 'AppController'
     })
     .otherwise({
-        redirectTo: '/fome'
+        redirectTo: '/food'
     });
 
 }]);
