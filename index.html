@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="Description" content="We are a marketing agency in Pune, specializing in generating high-quality, quote-ready leads through targeted Facebook ads, Google Ads, and content creation. Visit woxflow.in to grow your business effortlessly.">
     <meta name="Keyword" content="marketing agency, Pune marketing agency, quote-ready leads, Facebook ads, Google Ads, content creation, lead generation, digital marketing services">
     <meta name="author" content="woxflow">
@@ -36,56 +36,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
     <script src="app/app.js"></script>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-            { pageLanguage: 'en' }, 
-            'google_translate_element'
-          );
-        }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <script>
-        function customizeLanguageOrder() {
-            const preferredLanguages = ['English', 'Arabic', 'Turkish']; // List of preferred languages
-            
-            // Wait for the Google Translate dropdown to load
-            const interval = setInterval(() => {
-                const select = document.querySelector('.goog-te-combo');
-                if (select) {
-                    clearInterval(interval); // Stop the interval once the dropdown is found
-    
-                    // Move preferred languages to the top
-                    const options = Array.from(select.options);
-                    const reorderedOptions = [];
-    
-                    // Add preferred languages to the beginning
-                    preferredLanguages.forEach(lang => {
-                        const option = options.find(o => o.textContent.includes(lang));
-                        if (option) {
-                            reorderedOptions.push(option);
-                        }
-                    });
-    
-                    // Add the remaining languages
-                    const remainingOptions = options.filter(o => !preferredLanguages.includes(o.textContent));
-                    reorderedOptions.push(...remainingOptions);
-    
-                    // Clear the original options and append reordered options
-                    select.innerHTML = '';
-                    reorderedOptions.forEach(option => select.add(option));
-                }
-            }, 100); // Check every 100ms
-        }
-    
-        // Run customization after the Google Translate widget initializes
-        window.addEventListener('load', customizeLanguageOrder);
-    </script>    
-      
+     
 </head>
-<body >
+<body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3XPLCR2"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

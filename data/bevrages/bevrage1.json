@@ -1,0 +1,44 @@
+[
+    {
+        "image": "gallary/Testimg1.jpg",
+        "name": "ICED LATTE",
+        "rate": 25,
+        "description": "food1 description of for now small and popping upwordes food good very good food"
+    },
+    {
+        "image": "gallary/Testimg1.jpg",
+        "name": "Food Item 2",
+        "rate": 6,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "image": "gallary/Testimg1.jpg",
+        "name": "Food Item 2",
+        "rate": 6,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 2",
+        "rate": 6,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 2",
+        "rate": 6,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "image": "gallary/Testimg1.jpg",
+        "name": "Food Item 2",
+        "rate": 6,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 3",
+        "rate": 60,
+        "description": "food3 description of for now small and popping upwordes food good very good food"
+    }
+]

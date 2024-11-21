@@ -1,29 +1,35 @@
 var myApp = angular.module("myApp",['ngRoute','ngAnimate']);
 
 // before app runs
-myApp.config(['$routeProvider', '$locationProvider', function($routeProvider,$locationProvider){
+myApp.config(['$routeProvider', function($routeProvider){
 
     // $locationProvider.html5Mode(true);
 
     $routeProvider
-    .when('/food', {
-        templateUrl: 'views/food.html',
-        controller: 'AppController'
-    })
-    .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactController'
-    })
     .when('/all', {
         templateUrl: 'views/all.html',
+        controller: 'AppController'
+    })
+    .when('/food', {
+        templateUrl: 'views/food.html',
         controller: 'AppController'
     })
     .when('/bevrages', {
         templateUrl: 'views/bevrages.html',
         controller: 'AppController'
     })
+    .when('/favorites', {
+        templateUrl: 'views/favorites.html',
+        controller: 'AppController'
+    })
+    .when('/followUs', {
+        templateUrl: 'views/followUs.html',
+    })
+    .when('/contact', {
+        templateUrl: 'views/contact.html',
+    })
     .otherwise({
-        redirectTo: '/food'
+        redirectTo: '/all'
     });
 
 }]);
@@ -37,24 +43,12 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider,$lo
 
 myApp.controller('AppController', ['$scope','$http', function($scope,$http){
     
-    $http.get('data/food.json')
+    $http.get('data/bevrages/bevrage1.json')
     .then(function(response) {
         $scope.arr = response.data;
     })
     .catch(function(error) {
         console.error("Error loading data:", error);
     });
-
-    // console.log(angular.toJson($scope.arr));
-
-}]);
-
-
-
-myApp.controller('ContactController', ['$scope','$location', function($scope,$location){
-
-    // $scope.sendMessage = function(){
-    //     $location.path('/contact-success');
-    // };
 
 }]);
