@@ -41,8 +41,8 @@ myApp.config(['$routeProvider', function($routeProvider){
 // });
 
 
-myApp.controller('AppController', ['$scope','$http', function($scope,$http){
-    
+myApp.controller('AppController', ['$scope','$http', '$location', '$anchorScroll', function($scope,$http, $location, $anchorScroll) {
+    // Load data
     $http.get('data/bevrages/bevrage1.json')
     .then(function(response) {
         $scope.arr = response.data;
@@ -51,4 +51,14 @@ myApp.controller('AppController', ['$scope','$http', function($scope,$http){
         console.error("Error loading data:", error);
     });
 
+    // Scroll to the desired section
+    $scope.scrollTo = function(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
+        } else {
+            console.error('Section with id "' + sectionId + '" not found.');
+        }
+    };
 }]);
+

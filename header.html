@@ -1,16 +1,10 @@
 <div class="nav-main">
     <div id="nav-bar">
-        <a href="#!/all"><i class="fa-solid fa-magnifying-glass"></i></a>
         <div class="logo">
             <img src="./gallary/logo.png" alt="">
-            <p>Turkish Gourmet</p>
+            <p>Turkish<br>Gourmet</p>
         </div>
-        <select name="Language" id="Language" onchange="translatePage()">
-            <option value="en">English</option>
-            <option value="ar">Arabic</option>
-            <option value="tr">Turkish</option>
-            <option value="ru">Russian</option>
-        </select>
+        <div class="Translate" id="google_translate_element"></div>
     </div>
     <div class="sticky-nav1">
         <a href="#!/all">All</a>
@@ -29,68 +23,108 @@
     background-color: white;
     color: black;
     box-shadow: 0px 0px 21px #0000000a;
-    height: 130px;
+    height: 150px;
     width: auto;
 }
 
 #nav-bar{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 30px;
     margin-bottom: 30px;
+    gap: 20px;
+    max-width: 800px;
 }
-
-/* #nav-bar #google_translate_element{
-    width: 50px;
-} */
 
 #nav-bar .logo{
+    display: flex;
+    gap: 10px;
     user-select: none; 
     text-align: center;
-    width: 150px;
     margin-top: 20px;
     cursor: context-menu;
+    border: none;
+    border-bottom: 4px solid #004e00;
+    border-radius: 5px;
 }
 
-#nav-bar a,select{
+/* Container customization */
+#google_translate_element {
+    color: #fff;
+    margin: 20px;
+    margin-top: -20px;
+}
+
+.Translate{
+    color: #fff;
+}
+
+
+#google_translate_element select {
+    appearance: none; /* Hides the dropdown arrow in modern browsers */
+    -webkit-appearance: none; /* For Safari/Chrome */
+    -moz-appearance: none; /* For Firefox */
+    background: none; /* Optional: Remove default background */
+    border: none; /* Optional: Remove default border */
+    padding: 7px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+    margin-left: -5px;
+}
+
+
+/* Reposition the "Powered by Google Translate" */
+#google_translate_element .goog-te-gadget span {
+    font-size: 2px; /* Make it smaller */
+    color: #ccc; /* Light gray to blend it */
+    display: none; /* Stack it below */
+}
+
+/* Optional: Adjust the Google logo image */
+#google_translate_element img {
+    transform: scale(1.0); /* Reduce its size */
+}
+
+
+#nav-bar select{
     border: none;
-    border: 2px solid #919191;
+    border: 2px solid #004e00;
     border-radius: 50px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100px;
     text-decoration: none;
     color: black;
     background-color: #fafafa;
-    margin: 20px;
-    margin-bottom: -20px;
+    transform: translateX(-17px);
+    transform: translateY(22px);
+    z-index: 1000;
 }
 
-#Language{
-    appearance: none;
-    padding-left: 2px;
-    font-size: 15px;
+#nav-bar .logo img{
+    height: 60px;
+    margin: 0px;
+    transform: translateY(-10px);
+}
+
+#nav-bar .logo p{
+    font-weight: 500;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
 }
 
 @media screen and (max-width: 768px) {
-    #nav-bar{
-        font-size: 20px;
+    #nav-bar .logo{
+        margin: 10px;
     }
-}
-
-#nav-bar img{
-    height: 40px;
-    margin: 0px;
-}
-
-#nav-bar p{
-    font-weight: 500;
-    text-align: center;
-    margin: 0;
+    #nav-bar .logo p{
+        font-size: 14px;
+    }
+    #nav-bar .logo img{
+        height: 50px;
+    }
 }
 
 .sticky-nav1 {
@@ -122,5 +156,4 @@
     }
 }
 
-/* google trnaslate */
 </style>
