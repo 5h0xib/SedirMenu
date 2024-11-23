@@ -4,7 +4,7 @@
         <div ng-if="favorites.length === 0">
             <p>No favorites yet</p>
         </div>
-        <p ng-if="favorites.length > 0">Total: {{getTotal() | currency:' AED ':0}}</p> 
+        <p class="Total-price" ng-if="favorites.length > 0">Total: {{getTotal() | currency:' AED ':0}}</p> 
         <div ng-repeat="item in favorites track by $index" class="item-box" ng-animate="'animate'">
             <div class="details-box">
                 <div class="image-box">
@@ -79,6 +79,10 @@
 
 .item-details .price {
     font-size: 14px;
+    color: #006618;
+}
+
+.Total-price{
     color: #006618;
 }
 

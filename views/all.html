@@ -43,7 +43,7 @@
         <!-- List Box -->
          <h1>ALL<h1>
         <div class="list-box" id="BEVRAGES">
-            <div class="item-box" ng-repeat="item in arr | orderBy: order | filter: search">
+            <div class="item-box" ng-repeat="item in bev1 | orderBy: order | filter: search">
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                     <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
@@ -62,9 +62,10 @@
 
         <h1>BEVRAGES 2<h1>
         <div class="list-box" id="BEVRAGES2">
-            <div class="item-box" ng-repeat="item in arr | orderBy: order | filter: search">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
                 <div class="image-box">
-                    <i class="fa-regular fa-heart"></i>
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
                     <img ng-src="{{item.image}}" alt="{{item.name}}">
                 </div>
                 <div class="item-details">

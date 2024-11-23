@@ -5,6 +5,10 @@ myApp.service('DataService', ['$http', function ($http) {
     this.getBeverages = function () {
         return $http.get('data/bevrages/bevrage1.json');
     };
+
+    this.getBeverages2 = function () {
+        return $http.get('data/bevrages/bevrage2.json');
+    };
 }]);
 
 // Service for managing favorites
@@ -29,10 +33,12 @@ myApp.factory('FavoritesService', function () {
                 return true; // Successfully removed
             }
             return false; // Not found
+        },
+        isFavorite: function (item) {
+            return favorites.some(fav => fav.id === item.id);
         }
     };
 });
-
 
 // Configure Routes
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -66,7 +72,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
 
 // Initialize App
 myApp.run(['$window', '$timeout', function ($window, $timeout) {
-    // Google Translate Initialization
     $window.googleTranslateElementInit = function () {
         new $window.google.translate.TranslateElement(
             { pageLanguage: 'en', autoDisplay: false },
@@ -74,7 +79,6 @@ myApp.run(['$window', '$timeout', function ($window, $timeout) {
         );
     };
 
-    // Load Google Translate Script with Retry Logic
     function loadGoogleTranslateScript(retryCount = 3) {
         if (retryCount === 0) {
             console.error('Google Translate script failed to load after retries.');
@@ -106,7 +110,24 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
     // Load Beverages Data
     DataService.getBeverages()
         .then(function (response) {
-            $scope.arr = response.data;
+            $scope.bev1 = response.data;
+            // Sync items with FavoritesService on data load
+            $scope.bev1.forEach(item => {
+                item.isFavorite = FavoritesService.isFavorite(item);
+            });
+        })
+        .catch(function (error) {
+            console.error("Error loading data:", error);
+        });
+
+    // Load Beverages Data
+    DataService.getBeverages2()
+        .then(function (response) {
+            $scope.bev2 = response.data;
+            // Sync items with FavoritesService on data load
+            $scope.bev2.forEach(item => {
+                item.isFavorite = FavoritesService.isFavorite(item);
+            });
         })
         .catch(function (error) {
             console.error("Error loading data:", error);
@@ -122,53 +143,47 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
         }
     };
 
-    // Add item to favorites
+    // Add to Favorites
     $scope.addToFavorites = function (item) {
         const added = FavoritesService.addFavorite(item);
-        if (added) {
-            console.log('Item added to favorites!');
-        } else {
-            console.log('Item is already in favorites.');
-        }
+        item.isFavorite = added;
     };
 
-    // Initialize items
-    $scope.items = [
-        { id: 1, name: 'Item 1', rate: 100, isFavorite: false },
-        { id: 2, name: 'Item 2', rate: 150, isFavorite: false }
-    ];
-
-    // Toggle the favorite status of an item
+    // Toggle Favorite State
     $scope.toggleFavorite = function (item) {
-        item.isFavorite = !item.isFavorite;
-
-        // Optionally, add or remove from favorites list (you can adapt this to your logic)
         if (item.isFavorite) {
-            FavoritesService.addFavorite(item);
-        } else {
             FavoritesService.removeFavorite(item);
+        } else {
+            FavoritesService.addFavorite(item);
+        }
+        item.isFavorite = !item.isFavorite;
+    };
+
+    // Sync `isFavorite` status when the controller is initialized
+    $scope.syncFavorites = function () {
+        if ($scope.arr) {
+            $scope.arr.forEach(item => {
+                item.isFavorite = FavoritesService.isFavorite(item);
+            });
         }
     };
-    
+
+    // Ensure favorites are synced on view load
+    $scope.syncFavorites();
 }]);
+
 
 // Favorites Controller
 myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function ($scope, FavoritesService) {
     $scope.favorites = FavoritesService.getFavorites();
 
-    // Add item From favorites
-    $scope.removeFromFavorites = function(item) {
-       const index = $scope.favorites.findIndex(fav => fav.id === item.id);
-       if (index !== -1) {
-           $scope.favorites.splice(index, 1);
-           console.log('Item removed from favorites.');
-       }
-    }
+    $scope.removeFromFavorites = function (item) {
+        FavoritesService.removeFavorite(item);
+    };
 
-    $scope.getTotal = function(){
-        // total of all item.rate in the array
+    $scope.getTotal = function () {
         return $scope.favorites.reduce(function (total, item) {
-            return total + (item.rate || 0); // Safeguard for undefined rates
+            return total + (item.rate || 0);
         }, 0);
-    }
+    };
 }]);
