@@ -1,43 +1,50 @@
 [
     {
+        "id": 1,
         "image": "gallary/Testimg1.jpg",
         "name": "ICED LATTE",
         "rate": 250,
         "description": "food1 description of for now small and popping upwordes food good very good food"
     },
     {
+        "id": 2,
         "image": "gallary/Testimg1.jpg",
         "name": "Food Item 2",
         "rate": 6,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
+        "id": 3,
         "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 2",
-        "rate": 6,
-        "description": "food2 description of for now small and popping upwordes food good very good food" 
-    },
-    {
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 2",
-        "rate": 6,
-        "description": "food2 description of for now small and popping upwordes food good very good food" 
-    },
-    {
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 2",
-        "rate": 6,
-        "description": "food2 description of for now small and popping upwordes food good very good food" 
-    },
-    {
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 2",
-        "rate": 6,
-        "description": "food2 description of for now small and popping upwordes food good very good food" 
-    },
-    {
-        "image": "gallary/Testimg2.jpg",
         "name": "Food Item 3",
+        "rate": 26,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "id": 4,
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 4",
+        "rate": 120,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "id": 5,
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 5",
+        "rate": 12,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "id": 6,
+        "image": "gallary/Testimg1.jpg",
+        "name": "Food Item 6",
+        "rate": 65,
+        "description": "food2 description of for now small and popping upwordes food good very good food" 
+    },
+    {
+        "id": 7,
+        "image": "gallary/Testimg2.jpg",
+        "name": "Food Item 7",
         "rate": 60,
         "description": "food3 description of for now small and popping upwordes food good very good food"
     }

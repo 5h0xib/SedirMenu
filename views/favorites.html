@@ -4,16 +4,21 @@
         <div ng-if="favorites.length === 0">
             <p>No favorites yet</p>
         </div>
-        <div ng-repeat="item in favorites track by $index" class="item-box">
-            <div class="image-box">
-                <img ng-src="{{item.image}}" alt="{{item.name}}">
+        <p ng-if="favorites.length > 0">Total: {{getTotal() | currency:' AED ':0}}</p> 
+        <div ng-repeat="item in favorites track by $index" class="item-box" ng-animate="'animate'">
+            <div class="details-box">
+                <div class="image-box">
+                    <img ng-src="{{item.image}}" alt="{{item.name}}">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
             </div>
-            <div class="item-details">
-                <div class="item-name">{{item.name}}</div>
-                <div class="price">{{item.rate | currency:'AED ':0}}</div>
-            </div>
+    
+            <i class="fa-regular fa-trash-can" ng-click="removeFromFavorites(item)"></i>
         </div>
-    </div>
+    </div>    
 </div>
 
 <style>
@@ -30,6 +35,10 @@
     max-width: 800px;
 }
 
+.fav-box p{
+    font-size: 18px;
+}
+
 .item-box {
     background: #fff;
     border-radius: 10px;
@@ -38,12 +47,26 @@
     margin: 10px 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
     padding: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.item-box .details-box{
+    display: flex;
+    align-items: center;
+}
+
+.item-box i{
+    margin: 20px;
 }
 
 .image-box img {
     width: 50px;
     height: 50px;
+    border-radius: 5px;
     object-fit: cover;
     margin-right: 15px;
 }
@@ -58,4 +81,35 @@
     font-size: 14px;
     color: #006618;
 }
+
+/* animations */
+.item-box.ng-enter {
+    transition: 0.6s linear all;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.item-box.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Adjust for staggered leave animation */
+.item-box.ng-leave {
+    transition: 0.2s linear all;
+    opacity: 0.5;
+    transform: translateY(0px);
+}
+
+.item-box.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Staggered exit effect */
+.item-box.ng-leave-stagger {
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+}
+
 </style>

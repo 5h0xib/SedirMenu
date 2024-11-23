@@ -16,14 +16,23 @@ myApp.factory('FavoritesService', function () {
             return favorites;
         },
         addFavorite: function (item) {
-            if (!favorites.some(fav => fav.id === item.id)) { // Ensure unique items
+            if (!favorites.some(fav => fav.id === item.id)) {
                 favorites.push(item);
                 return true; // Successfully added
             }
             return false; // Already exists
+        },
+        removeFavorite: function (item) {
+            const index = favorites.findIndex(fav => fav.id === item.id);
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                return true; // Successfully removed
+            }
+            return false; // Not found
         }
     };
 });
+
 
 // Configure Routes
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -103,16 +112,6 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
             console.error("Error loading data:", error);
         });
 
-    // Add item to favorites
-    $scope.addToFavorites = function (item) {
-        const added = FavoritesService.addFavorite(item);
-        if (added) {
-            alert('Item added to favorites!');
-        } else {
-            alert('Item is already in favorites.');
-        }
-    };
-
     // Scroll to Section
     $scope.scrollTo = function (sectionId) {
         const element = document.getElementById(sectionId);
@@ -122,9 +121,54 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
             console.error('Section with id "' + sectionId + '" not found.');
         }
     };
+
+    // Add item to favorites
+    $scope.addToFavorites = function (item) {
+        const added = FavoritesService.addFavorite(item);
+        if (added) {
+            console.log('Item added to favorites!');
+        } else {
+            console.log('Item is already in favorites.');
+        }
+    };
+
+    // Initialize items
+    $scope.items = [
+        { id: 1, name: 'Item 1', rate: 100, isFavorite: false },
+        { id: 2, name: 'Item 2', rate: 150, isFavorite: false }
+    ];
+
+    // Toggle the favorite status of an item
+    $scope.toggleFavorite = function (item) {
+        item.isFavorite = !item.isFavorite;
+
+        // Optionally, add or remove from favorites list (you can adapt this to your logic)
+        if (item.isFavorite) {
+            FavoritesService.addFavorite(item);
+        } else {
+            FavoritesService.removeFavorite(item);
+        }
+    };
+    
 }]);
 
 // Favorites Controller
 myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function ($scope, FavoritesService) {
     $scope.favorites = FavoritesService.getFavorites();
+
+    // Add item From favorites
+    $scope.removeFromFavorites = function(item) {
+       const index = $scope.favorites.findIndex(fav => fav.id === item.id);
+       if (index !== -1) {
+           $scope.favorites.splice(index, 1);
+           console.log('Item removed from favorites.');
+       }
+    }
+
+    $scope.getTotal = function(){
+        // total of all item.rate in the array
+        return $scope.favorites.reduce(function (total, item) {
+            return total + (item.rate || 0); // Safeguard for undefined rates
+        }, 0);
+    }
 }]);
