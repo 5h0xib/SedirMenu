@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 *{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 html{
@@ -15,7 +20,7 @@ body{
     font-weight: 400;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 70px;
+    padding-bottom: 70px;
 }
 
 /* Animations */

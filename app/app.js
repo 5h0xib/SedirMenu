@@ -1,8 +1,32 @@
 var myApp = angular.module("myApp", ['ngRoute', 'ngAnimate']);
 
-// before app runs
-myApp.config(['$routeProvider', function ($routeProvider) {
+// Shared Service for Data
+myApp.service('DataService', ['$http', function ($http) {
+    this.getBeverages = function () {
+        return $http.get('data/bevrages/bevrage1.json');
+    };
+}]);
 
+// Service for managing favorites
+myApp.factory('FavoritesService', function () {
+    let favorites = [];
+
+    return {
+        getFavorites: function () {
+            return favorites;
+        },
+        addFavorite: function (item) {
+            if (!favorites.some(fav => fav.id === item.id)) { // Ensure unique items
+                favorites.push(item);
+                return true; // Successfully added
+            }
+            return false; // Already exists
+        }
+    };
+});
+
+// Configure Routes
+myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/all', {
             templateUrl: 'views/all.html',
@@ -18,7 +42,7 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         })
         .when('/favorites', {
             templateUrl: 'views/favorites.html',
-            controller: 'AppController'
+            controller: 'FavoritesController'
         })
         .when('/followUs', {
             templateUrl: 'views/followUs.html',
@@ -29,31 +53,28 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         .otherwise({
             redirectTo: '/all'
         });
-
 }]);
 
+// Initialize App
 myApp.run(['$window', '$timeout', function ($window, $timeout) {
-    // Define the Google Translate initialization function
+    // Google Translate Initialization
     $window.googleTranslateElementInit = function () {
         new $window.google.translate.TranslateElement(
             { pageLanguage: 'en', autoDisplay: false },
             'google_translate_element'
         );
-    };    
+    };
 
-    // Function to dynamically load the Google Translate script
+    // Load Google Translate Script with Retry Logic
     function loadGoogleTranslateScript(retryCount = 3) {
         if (retryCount === 0) {
             console.error('Google Translate script failed to load after retries.');
             return;
         }
-
-        // Check if the script is already loaded
         if (document.querySelector('script[src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"]')) {
             return;
         }
 
-        // Dynamically create the script element
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
@@ -62,19 +83,19 @@ myApp.run(['$window', '$timeout', function ($window, $timeout) {
         };
         script.onerror = function () {
             console.error('Failed to load Google Translate script. Retrying...');
-            $timeout(() => loadGoogleTranslateScript(retryCount - 1), 2000); // Retry after 2 seconds
+            $timeout(() => loadGoogleTranslateScript(retryCount - 1), 2000);
         };
 
         document.body.appendChild(script);
     }
 
-    // Load the Google Translate script with retry logic
     loadGoogleTranslateScript();
 }]);
 
-myApp.controller('AppController', ['$scope', '$http', '$location', '$anchorScroll', function ($scope, $http, $location, $anchorScroll) {
-    // Load data
-    $http.get('data/bevrages/bevrage1.json')
+// Main App Controller
+myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', function ($scope, DataService, FavoritesService) {
+    // Load Beverages Data
+    DataService.getBeverages()
         .then(function (response) {
             $scope.arr = response.data;
         })
@@ -82,13 +103,28 @@ myApp.controller('AppController', ['$scope', '$http', '$location', '$anchorScrol
             console.error("Error loading data:", error);
         });
 
-    // Scroll to the desired section
+    // Add item to favorites
+    $scope.addToFavorites = function (item) {
+        const added = FavoritesService.addFavorite(item);
+        if (added) {
+            alert('Item added to favorites!');
+        } else {
+            alert('Item is already in favorites.');
+        }
+    };
+
+    // Scroll to Section
     $scope.scrollTo = function (sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
+            element.scrollIntoView({ behavior: 'smooth' });
         } else {
             console.error('Section with id "' + sectionId + '" not found.');
         }
     };
+}]);
+
+// Favorites Controller
+myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function ($scope, FavoritesService) {
+    $scope.favorites = FavoritesService.getFavorites();
 }]);

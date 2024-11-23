@@ -1,19 +1,61 @@
 <div class="fav-container">
     <div class="fav-box">
-        <h1>favorites</h1>
+        <h1>Favorites</h1>
+        <div ng-if="favorites.length === 0">
+            <p>No favorites yet</p>
+        </div>
+        <div ng-repeat="item in favorites track by $index" class="item-box">
+            <div class="image-box">
+                <img ng-src="{{item.image}}" alt="{{item.name}}">
+            </div>
+            <div class="item-details">
+                <div class="item-name">{{item.name}}</div>
+                <div class="price">{{item.rate | currency:'AED ':0}}</div>
+            </div>
+        </div>
     </div>
 </div>
 
 <style>
-
-.fav-container{
+.fav-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-.fav-container .fav-box{
+.fav-box {
+    width: 100%;
+    max-width: 800px;
+}
+
+.item-box {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px #0000001a;
+    margin: 10px 0;
     display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
+.image-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-details .item-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.item-details .price {
+    font-size: 14px;
+    color: #006618;
+}
 </style>
