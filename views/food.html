@@ -4,31 +4,43 @@
     <div class="horizontal-nav">
         <div class="nav-container">
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES')">Break Fast</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Soups</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Salads</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Appetizers</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Turkish Pide</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pizza</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">NIGESH</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pasta</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Burgers</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">food</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Wraps</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Main Course</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Kids Menu</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Deserts</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Fruits</a> <!-- ?? --->
             </div>
         </div>
     </div>
@@ -58,7 +70,8 @@
                 </div>
             </div>        
         </div>
-                
+            
+
         <h1>BEVRAGES 2<h1>
         <div class="list-box" id="BEVRAGES2">
             <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
@@ -96,7 +109,6 @@
         width: 100%;
         position: sticky;
         top: 0;
-        padding-top: 10px;
         z-index: 1000;
         border: none;
         background-color: #ffffff;
@@ -125,25 +137,28 @@
     
     .Main .horizontal-nav .nav-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
         overflow-x: auto;
     }
     
     .Main .horizontal-nav .nav-container .links{
-        height: 35px;
+        height: 40px;
+        margin-top: 10px;
     }
     
     .Main .horizontal-nav .nav-container .links a{
-        margin: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
-        border-radius: 2px;
+        margin: 7px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
         font-size: 18px;
         text-decoration: none;
         color: #333;
         background-color: #fff;
-        box-shadow: 0px 0px 2px #000000;
+        box-shadow: 1px 1px 5px 1px #003b0025;
+        border: none;
+        border-radius: 5px;
+        white-space: nowrap;
     }
     
     .Main .dir-body {
@@ -167,12 +182,13 @@
         justify-content: center;
         align-items: center;
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     
     .order-bar button {
         padding: 7px;
         font-size: 16px;
+        margin: 5px;
         background-color: #ffffff;
         color: rgb(0, 0, 0);
         box-shadow: 0px 0px 4px #00000057;
@@ -189,10 +205,11 @@
     .order-bar input {
         padding: 7px;
         font-size: 16px;
+        margin: 3px;
         border: none;
         box-shadow: 0px 0px 4px #00000057;
         border-radius: 5px;
-        width: 220px;
+        width: 250px;
     }
     
     /* List Box Styling */
@@ -224,6 +241,7 @@
         width: 100%;
         height: 200px;
         object-fit: cover;
+        overflow: hidden;
     }
     
     .image-box i {
@@ -304,10 +322,29 @@
         opacity: 0;
         transform: translateX(100px);
     }
+
+    /* #Plain-hart */
+    #Plain-hart { 
+        transition: 0.5s linear all; 
+        opacity: 1; 
+        transform: scale(1); 
+    } 
     
-    .item-box.ng-leave-stagger{
-        transition-delay: 0.1;
-        transition-duration: 0;
+    #Plain-hart.ng-hide-add.ng-hide-add-active, #Plain-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: scale(1.5); 
+    }
+
+    /* #Solid-hart */
+    #Solid-hart { 
+        transition: 0.2s linear all; 
+        opacity: 1; 
+        transform: translateY(0px);
+    }
+    
+    #Solid-hart.ng-hide-add.ng-hide-add-active, #Solid-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: translateY(20px); 
     }
     
     </style>

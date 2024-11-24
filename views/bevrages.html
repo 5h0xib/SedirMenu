@@ -4,31 +4,28 @@
     <div class="horizontal-nav">
         <div class="nav-container">
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES')">Home</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Mojithos</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">About</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Mocktails</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">About</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Milk Shakes</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">MORE</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Smoothis</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">About</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Protein Shakes</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">NIGESH</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Home Made</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">NIGESH</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Soft Drinks</a>
             </div>
             <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">NIGESH</a>
-            </div>
-            <div class="links">
-                <a href="" class="nav-item" ng-click="scrollTo('BEVRAGES2')">About</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Teas</a>
             </div>
         </div>
     </div>
@@ -41,7 +38,7 @@
         </div>
 
         <!-- List Box -->
-         <h1>BEVRAGES<h1>
+        <h1>BEVRAGES<h1>
         <div class="list-box" id="BEVRAGES">
             <div class="item-box" ng-repeat="item in bev1 | orderBy: order | filter: search">
                 <div class="image-box">
@@ -81,234 +78,258 @@
 </div>
 
 <style>
-/* General Main Container Styling */
-.Main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-}
+    /* General Main Container Styling */
+    .Main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .Main .horizontal-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border: none;
+        background-color: #ffffff;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar {
+        height: 5px; /* Adjust the height of the scrollbar */
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb {
+        background: #004e00; /* Color of the scrollbar thumb */
+        border-radius: 10px; /* Rounded corners */
+        transition: 0.3s ease-in-out;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb:hover {
+        background: #006800; /* Color of the scrollbar thumb on hover */
+        transition: 0.3s ease-in-out;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-track {
+        background: #e6e6e6; /* Background of the scrollbar track */
+        border-radius: 10px; /* Rounded corners */
+    }
+    
+    
+    .Main .horizontal-nav .nav-container {
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .Main .horizontal-nav .nav-container .links{
+        height: 40px;
+        margin-top: 10px;
+    }
+    
+    .Main .horizontal-nav .nav-container .links a{
+        margin: 7px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 1px 1px 5px 1px #003b0025;
+        border: none;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+    
+    .Main .dir-body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .Main .dir-body h1{
+        font-size: 30px;
+        text-transform: capitalize;
+        font-weight: 100;
+    }
+    
+    
+    
+    /* Order,Search Bar Styling */
+    .order-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .order-bar button {
+        padding: 7px;
+        font-size: 16px;
+        margin: 5px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 4px #00000057;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .order-bar button:hover {
+        background-color: #f5f5f5;
+    }
+    
+    .order-bar input {
+        padding: 7px;
+        font-size: 16px;
+        margin: 3px;
+        border: none;
+        box-shadow: 0px 0px 4px #00000057;
+        border-radius: 5px;
+        width: 250px;
+    }
+    
+    /* List Box Styling */
+    .list-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #0a5200;
+    }
+    
+    /* Item Box Styling */
+    .item-box {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 5px #0000001a;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative; /* Important for positioning description */
+    }
+    
+    .item-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Image Styling */
+    .image-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    
+    .image-box i {
+        position: absolute;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 50px;
+        background: white;
+        text-shadow: 0px 0px 12px rgb(255, 255, 255);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.171);
+    }
+    
+    /* Item Details Styling */
+    .item-details {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .item-details .item-name {
+        font-size: 11px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .item-details .price {
+        font-size: 11px;
+        margin: 2px;
+        font-weight: bold;
+        color: #006618;
+    }
+    
+    /* Description Styling */
+    .item-description {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        color: white;
+        padding: 15px;
+        font-size: 14px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+    }
+    
+    /* Hover Effect: Show Description */
+    .item-box:hover .item-description {
+        opacity: 1;
+        transform: translateY(0); /* Slide it up */
+    }
+    
+    
+    /* Animation */
+    
+    .item-box.ng-enter {
+        transition: 0.6s linear all;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    .item-box.ng-enter.ng-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    .item-box.ng-leave {
+        transition: 0.2s linear all;
+        opacity: 0.5;
+        transform: translateX(0px);
+    }
+    
+    .item-box.ng-leave.ng-leave-active {
+        opacity: 0;
+        transform: translateX(100px);
+    }
 
-.Main .horizontal-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    padding-top: 10px;
-    z-index: 1000;
-    border: none;
-    background-color: #ffffff;
-}
+    /* #Plain-hart */
+    #Plain-hart { 
+        transition: 0.5s linear all; 
+        opacity: 1; 
+        transform: scale(1); 
+    } 
+    
+    #Plain-hart.ng-hide-add.ng-hide-add-active, #Plain-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: scale(1.5); 
+    }
 
-.Main .horizontal-nav .nav-container::-webkit-scrollbar {
-    height: 5px; /* Adjust the height of the scrollbar */
-}
-
-.Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb {
-    background: #004e00; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners */
-    transition: 0.3s ease-in-out;
-}
-
-.Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb:hover {
-    background: #006800; /* Color of the scrollbar thumb on hover */
-    transition: 0.3s ease-in-out;
-}
-
-.Main .horizontal-nav .nav-container::-webkit-scrollbar-track {
-    background: #e6e6e6; /* Background of the scrollbar track */
-    border-radius: 10px; /* Rounded corners */
-}
-
-
-.Main .horizontal-nav .nav-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto;
-}
-
-.Main .horizontal-nav .nav-container .links{
-    height: 35px;
-}
-
-.Main .horizontal-nav .nav-container .links a{
-    margin: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 2px;
-    font-size: 18px;
-    text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    box-shadow: 0px 0px 2px #000000;
-}
-
-.Main .dir-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1000px;
-}
-
-.Main .dir-body h1{
-    font-size: 30px;
-    text-transform: capitalize;
-    font-weight: 100;
-}
-
-
-
-/* Order,Search Bar Styling */
-.order-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.order-bar button {
-    padding: 7px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 4px #00000057;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.order-bar button:hover {
-    background-color: #f5f5f5;
-}
-
-.order-bar input {
-    padding: 7px;
-    font-size: 16px;
-    border: none;
-    box-shadow: 0px 0px 4px #00000057;
-    border-radius: 5px;
-    width: 220px;
-}
-
-/* List Box Styling */
-.list-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #0a5200;
-}
-
-/* Item Box Styling */
-.item-box {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 5px #0000001a;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Important for positioning description */
-}
-
-.item-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Image Styling */
-.image-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.image-box i {
-    position: absolute;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    border-radius: 50px;
-    background: white;
-    text-shadow: 0px 0px 12px rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.171);
-}
-
-/* Item Details Styling */
-.item-details {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.item-details .item-name {
-    font-size: 11px;
-    font-weight: bold;
-    color: #333;
-}
-
-.item-details .price {
-    font-size: 11px;
-    margin: 2px;
-    font-weight: bold;
-    color: #006618;
-}
-
-/* Description Styling */
-.item-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white;
-    padding: 15px;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s ease;
-}
-
-/* Hover Effect: Show Description */
-.item-box:hover .item-description {
-    opacity: 1;
-    transform: translateY(0); /* Slide it up */
-}
-
-
-/* Animation */
-
-.item-box.ng-enter {
-    transition: 0.6s linear all;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.item-box.ng-enter.ng-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-.item-box.ng-leave {
-    transition: 0.2s linear all;
-    opacity: 0.5;
-    transform: translateX(0px);
-}
-
-.item-box.ng-leave.ng-leave-active {
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-.item-box.ng-leave-stagger{
-    transition-delay: 0.1;
-    transition-duration: 0;
-}
-
-</style>
+    /* #Solid-hart */
+    #Solid-hart { 
+        transition: 0.2s linear all; 
+        opacity: 1; 
+        transform: translateY(0px);
+    }
+    
+    #Solid-hart.ng-hide-add.ng-hide-add-active, #Solid-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    
+    </style>

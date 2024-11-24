@@ -9,6 +9,7 @@
     <div class="sticky-nav1">
         <a href="#!/all">All</a>
         <a href="#!/food">Food</a>
+        <a href="#!/sweets">Sweets</a>
         <a href="#!/bevrages">Bevrages</a>
     </div>
 </div>
@@ -22,9 +23,6 @@
     align-items: center;
     background-color: white;
     color: black;
-    box-shadow: 0px 0px 21px #0000000a;
-    height: 150px;
-    width: auto;
 }
 
 #nav-bar{
@@ -32,10 +30,9 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 30px;
-    margin-bottom: 30px;
     gap: 20px;
     max-width: 800px;
+    margin: 10px auto;
 }
 
 #nav-bar .logo{
@@ -46,11 +43,11 @@
     margin-top: 20px;
     cursor: context-menu;
     border: none;
-    border-bottom: 4px solid #004e00;
+    border-bottom: 5px solid #004e00;
     border-radius: 5px;
 }
 
-/* Container customization */
+/* GOOGLE TRANSLATE SECTION */
 #google_translate_element {
     color: #fff;
     margin: 20px;
@@ -63,9 +60,6 @@
 
 
 #google_translate_element select {
-    appearance: none; /* Hides the dropdown arrow in modern browsers */
-    -webkit-appearance: none; /* For Safari/Chrome */
-    -moz-appearance: none; /* For Firefox */
     background: none; /* Optional: Remove default background */
     border: none; /* Optional: Remove default border */
     padding: 7px;
@@ -91,8 +85,9 @@
 
 #nav-bar select{
     border: none;
-    border: 3px solid #004e00;
-    border-radius: 50px;
+    border: 2px solid #003b00;
+    box-shadow: 0px 0px 5px 1px #004e0049;
+    border-radius: 10px;
     width: 100px;
     text-decoration: none;
     color: black;
@@ -101,6 +96,8 @@
     transform: translateY(22px);
     z-index: 1000;
 }
+
+/* google translate end */
 
 #nav-bar .logo img{
     height: 60px;
@@ -131,20 +128,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .sticky-nav1 a {
     text-decoration: none;
     font-size: 18px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     margin: 7px;
-    margin-bottom: -10px;
     color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 1px 1px #0000006b;
+    box-shadow: 1px 1px 5px 1px #003b0025;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
+    transform: translateY(10px);
 }
 
 @media screen and (max-width: 768px) {

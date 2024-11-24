@@ -23,6 +23,10 @@ body{
     padding-bottom: 70px;
 }
 
+main{
+    padding: 0px;
+}
+
 /* Animations */
 
 main.ng-enter{
