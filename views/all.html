@@ -10,28 +10,28 @@
                 <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Soups</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Salads</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES3')">Salads</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Appetizers</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES4')">Appetizers</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Turkish Pide</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES5')">Turkish Pide</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pizza</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES6')">Pizza</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pasta</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES7')">Pasta</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Burgers</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES8')">Burgers</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Wraps</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES9')">Wraps</a>
             </div>
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Main Course</a>
+                <a class="nav-item" ng-click="scrollTo('BEVRAGES10')">Main Course</a>
             </div>
             <div class="links">
                 <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Kids Menu</a>
@@ -98,6 +98,151 @@
 
         <h1>BEVRAGES 2<h1>
         <div class="list-box" id="BEVRAGES2">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+            <h1>BEVRAGES 2<h1>
+        <div class="list-box" id="BEVRAGES3">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                <h1>BEVRAGES 2<h1>
+        <div class="list-box" id="BEVRAGES4">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                    <h1>BEVRAGES 2<h1>
+        <div class="list-box" id="BEVRAGES5">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                        <h1>BEVRAGES 2<h1>
+        <div class="list-box" id="BEVRAGES6">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                            <h1>BEVRAGES 2<h1>
+        <div class="list-box" id="BEVRAGES7">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                                <h1>BEVRAGES 8<h1>
+        <div class="list-box" id="BEVRAGES8">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+
+                                    <h1>BEVRAGES 9<h1>
+        <div class="list-box" id="BEVRAGES9">
+            <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+                <div class="item-description">
+                    <p>{{item.description}}</p>
+                </div>
+            </div>        
+        </div>
+
+                                        <h1>BEVRAGES 10<h1>
+        <div class="list-box" id="BEVRAGES10">
             <div class="item-box" ng-repeat="item in bev2 | orderBy: order | filter: search">
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
