@@ -1,50 +1,50 @@
 [
     {
         "id": 1,
-        "image": "gallary/Testimg1.jpg",
-        "name": "ICED LATTE",
-        "rate": 250,
+        "image": "gallary/baklava - Copy (2).jpg",
+        "name": "baklava",
+        "rate": 25,
         "description": "food1 description of for now small and popping upwordes food good very good food"
     },
     {
         "id": 2,
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 2",
+        "image": "gallary/baklava carrot slice.jpg",
+        "name": "baklava carrot slice",
         "rate": 6,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 3,
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 3",
+        "image": "gallary/ceasar chicken salad.jpeg",
+        "name": "ceasar chicken salad",
         "rate": 26,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 4,
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 4",
+        "image": "gallary/cold baklava.jpg",
+        "name": "cold baklava",
         "rate": 120,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 5,
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 5",
+        "image": "gallary/dynamite shrimp.jpeg",
+        "name": "dynamite shrimp",
         "rate": 12,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 6,
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 6",
+        "image": "gallary/FRENCH FRIES.jpg",
+        "name": "French Fries",
         "rate": 65,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 7,
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 7",
+        "image": "gallary/gavurdag salad.jpeg",
+        "name": "gavurdag salad",
         "rate": 60,
         "description": "food3 description of for now small and popping upwordes food good very good food"
     }

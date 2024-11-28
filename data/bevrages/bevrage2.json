@@ -1,36 +1,36 @@
 [
     {
         "id": 8,
-        "image": "gallary/Testimg1.jpg",
-        "name": "ICED LATTE",
-        "rate": 250,
+        "image": "gallary/grilled seabass.jpeg",
+        "name": "grilled seabass",
+        "rate": 20,
         "description": "food1 description of for now small and popping upwordes food good very good food"
     },
     {
         "id": 9,
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 9",
-        "rate": 6,
+        "image": "gallary/iceCream - Copy.jpg",
+        "name": "iceCream",
+        "rate": 60,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 10,
-        "image": "gallary/Testimg1.jpg",
-        "name": "Food Item 10",
+        "image": "gallary/iceCream.jpg",
+        "name": "iceCream",
         "rate": 26,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 11,
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 11",
+        "image": "gallary/ceasar chicken salad.jpeg",
+        "name": "ceasar chicken salad",
         "rate": 120,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },
     {
         "id": 12,
-        "image": "gallary/Testimg2.jpg",
-        "name": "Food Item 12",
+        "image": "gallary/baklava - Copy (2).jpg",
+        "name": "baklava",
         "rate": 12,
         "description": "food2 description of for now small and popping upwordes food good very good food" 
     },

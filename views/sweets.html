@@ -4,67 +4,10 @@
     <div class="horizontal-nav">
         <div class="nav-container">
             <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES')">Break Fast</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Soups</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Salads</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Appetizers</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Turkish Pide</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pizza</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Pasta</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Burgers</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Wraps</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Main Course</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Kids Menu</a>
-            </div>
-            <div class="links">
                 <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Deserts</a>
             </div>
             <div class="links">
                 <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Fruits</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Mojithos</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Mocktails</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Milk Shakes</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Smoothis</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Protein Shakes</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Home Made</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Soft Drinks</a>
-            </div>
-            <div class="links">
-                <a class="nav-item" ng-click="scrollTo('BEVRAGES2')">Teas</a>
             </div>
         </div>
     </div>
@@ -83,7 +26,7 @@
                     <div class="image-box">
                         <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                         <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                        <img ng-src="{{item.image}}" alt="{{item.name}}">
+                        <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
                     </div>
                     <div class="item-details">
                         <div class="item-name">{{item.name}}</div>
@@ -102,7 +45,7 @@
                     <div class="image-box">
                         <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                         <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                        <img ng-src="{{item.image}}" alt="{{item.name}}">
+                        <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
                     </div>
                     <div class="item-details">
                         <div class="item-name">{{item.name}}</div>
@@ -372,3 +315,18 @@
         }
         
         </style>
+
+<script>
+    // Optional: Add a simple preloader for images
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(image => {
+            const src = image.getAttribute('ng-src');
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                image.src = src; // Set the actual image source when it's loaded
+            };
+        });
+    });
+</script>

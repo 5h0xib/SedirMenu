@@ -83,7 +83,7 @@
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                     <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                    <img ng-src="{{item.image}}" alt="{{item.name}}">
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
                 </div>
                 <div class="item-details">
                     <div class="item-name">{{item.name}}</div>
@@ -102,7 +102,7 @@
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                     <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                    <img ng-src="{{item.image}}" alt="{{item.name}}">
+                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
                 </div>
                 <div class="item-details">
                     <div class="item-name">{{item.name}}</div>
@@ -372,3 +372,18 @@
     }
     
     </style>
+
+<script>
+    // Optional: Add a simple preloader for images
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(image => {
+            const src = image.getAttribute('ng-src');
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                image.src = src; // Set the actual image source when it's loaded
+            };
+        });
+    });
+</script>
