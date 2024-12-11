@@ -1,20 +1,44 @@
+//app.js
 var myApp = angular.module("myApp", ['ngRoute', 'ngAnimate']);
 
 // Shared Service for Data
 myApp.service('DataService', ['$http', function ($http) {
-    this.getBeverages = function () {
+    // Beverages
+    this.getbevrage1 = function () {
         return $http.get('data/bevrages/bevrage1.json');
     };
-
-    this.getBeverages2 = function () {
+    this.getbevrage2 = function () {
         return $http.get('data/bevrages/bevrage2.json');
+    };
+
+    this.getItems = function () {
+        const categories = [
+            this.getbevrage1(),
+            this.getbevrage2()
+        ];
+    
+        // Fetch all categories and combine them into a single array
+        return Promise.all(categories).then(responses => {
+            return responses.reduce((allItems, response) => {
+                return allItems.concat(response.data);
+            }, []);
+        });
+    };
+    
+
+    this.scrollTo = function (elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            console.error(`Element with ID "${elementId}" not found.`);
+        }
     };
 }]);
 
 // Service for managing favorites
 myApp.factory('FavoritesService', function () {
     let favorites = [];
-
     return {
         getFavorites: function () {
             return favorites;
@@ -115,33 +139,25 @@ myApp.run(['$window', '$timeout', function ($window, $timeout) {
 
 // Main App Controller
 myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', function ($scope, DataService, FavoritesService) {
-    // Load Beverages Data
-    DataService.getBeverages()
-        .then(function (response) {
-            $scope.bev1 = response.data;
-            // Sync items with FavoritesService on data load
-            $scope.bev1.forEach(item => {
-                item.isFavorite = FavoritesService.isFavorite(item);
-            });
-        })
-        .catch(function (error) {
-            console.error("Error loading data:", error);
-        });
+    const loadCategory = function (serviceMethod, scopeKey) {
+        serviceMethod().then(function (response) {
+            $scope[scopeKey] = response.data;
 
-    // Load Beverages Data
-    DataService.getBeverages2()
-        .then(function (response) {
-            $scope.bev2 = response.data;
-            // Sync items with FavoritesService on data load
-            $scope.bev2.forEach(item => {
+            // Resize images in the loaded data
+            $scope[scopeKey].forEach(item => {
                 item.isFavorite = FavoritesService.isFavorite(item);
+                if (item.imageUrl) {
+                    resizeImage(item.imageUrl, 800).then(resizedImage => {
+                        item.optimizedImageUrl = resizedImage;
+                    });
+                }
             });
-        })
-        .catch(function (error) {
-            console.error("Error loading data:", error);
+        }).catch(function (error) {
+            console.error(`Error loading ${scopeKey}:`, error);
         });
+    };
 
-        // Function to resize an image to the specified width
+    // Function to resize an image to the specified width
     function resizeImage(imageUrl, targetWidth) {
         return new Promise((resolve, reject) => {
             const img = new Image();
@@ -169,6 +185,11 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
             img.src = imageUrl; // Trigger image loading
         });
     }
+
+    // Load all categories
+    // Food
+    loadCategory(DataService.getbevrage1, 'bevrage1');
+    loadCategory(DataService.getbevrage2, 'bevrage2');
 
     // Scroll to Section
     $scope.scrollTo = function (sectionId) {
@@ -231,7 +252,10 @@ myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function 
 }]);
 
 
-myApp.controller('ItemDetailController', ['$scope', '$routeParams', 'DataService', 'FavoritesService', '$window', '$timeout',function ($scope, $routeParams, DataService, FavoritesService, $window, $timeout) {
+// ItemDetailsController
+myApp.controller('ItemDetailController', [
+    '$scope', '$routeParams', 'DataService', 'FavoritesService', '$window', '$timeout',
+    function ($scope, $routeParams, DataService, FavoritesService, $window, $timeout) {
   
       const itemId = parseInt($routeParams.id, 10);
       console.log("Item ID selected:", itemId);
@@ -280,4 +304,6 @@ myApp.controller('ItemDetailController', ['$scope', '$routeParams', 'DataService
       $scope.goBack = function () {
         $window.history.back();
       };
-}]);
+    }
+  ]);
+  
