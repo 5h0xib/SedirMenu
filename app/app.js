@@ -1,44 +1,20 @@
-//app.js
 var myApp = angular.module("myApp", ['ngRoute', 'ngAnimate']);
 
 // Shared Service for Data
 myApp.service('DataService', ['$http', function ($http) {
-    // Beverages
-    this.getbevrage1 = function () {
+    this.getBeverages = function () {
         return $http.get('data/bevrages/bevrage1.json');
     };
-    this.getbevrage2 = function () {
+
+    this.getBeverages2 = function () {
         return $http.get('data/bevrages/bevrage2.json');
-    };
-
-    this.getItems = function () {
-        const categories = [
-            this.getbevrage1(),
-            this.getbevrage2()
-        ];
-    
-        // Fetch all categories and combine them into a single array
-        return Promise.all(categories).then(responses => {
-            return responses.reduce((allItems, response) => {
-                return allItems.concat(response.data);
-            }, []);
-        });
-    };
-    
-
-    this.scrollTo = function (elementId) {
-        const element = document.getElementById(elementId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-            console.error(`Element with ID "${elementId}" not found.`);
-        }
     };
 }]);
 
 // Service for managing favorites
 myApp.factory('FavoritesService', function () {
     let favorites = [];
+
     return {
         getFavorites: function () {
             return favorites;
@@ -139,57 +115,31 @@ myApp.run(['$window', '$timeout', function ($window, $timeout) {
 
 // Main App Controller
 myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', function ($scope, DataService, FavoritesService) {
-    const loadCategory = function (serviceMethod, scopeKey) {
-        serviceMethod().then(function (response) {
-            $scope[scopeKey] = response.data;
-
-            // Resize images in the loaded data
-            $scope[scopeKey].forEach(item => {
+    // Load Beverages Data
+    DataService.getBeverages()
+        .then(function (response) {
+            $scope.bev1 = response.data;
+            // Sync items with FavoritesService on data load
+            $scope.bev1.forEach(item => {
                 item.isFavorite = FavoritesService.isFavorite(item);
-                if (item.imageUrl) {
-                    resizeImage(item.imageUrl, 800).then(resizedImage => {
-                        item.optimizedImageUrl = resizedImage;
-                    });
-                }
             });
-        }).catch(function (error) {
-            console.error(`Error loading ${scopeKey}:`, error);
+        })
+        .catch(function (error) {
+            console.error("Error loading data:", error);
         });
-    };
 
-    // Function to resize an image to the specified width
-    function resizeImage(imageUrl, targetWidth) {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.crossOrigin = 'anonymous'; // Handle CORS for external images
-            img.onload = function () {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                
-                // Calculate the aspect ratio and set canvas dimensions
-                const aspectRatio = img.height / img.width;
-                canvas.width = targetWidth;
-                canvas.height = targetWidth * aspectRatio;
-
-                // Draw the image onto the canvas
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                // Convert the canvas to a data URL (base64 string)
-                const resizedImageUrl = canvas.toDataURL('image/jpeg', 0.7); // Adjust quality as needed
-                resolve(resizedImageUrl);
-            };
-            img.onerror = function () {
-                console.error(`Failed to load image at ${imageUrl}`);
-                reject(`Failed to load image at ${imageUrl}`);
-            };
-            img.src = imageUrl; // Trigger image loading
+    // Load Beverages Data
+    DataService.getBeverages2()
+        .then(function (response) {
+            $scope.bev2 = response.data;
+            // Sync items with FavoritesService on data load
+            $scope.bev2.forEach(item => {
+                item.isFavorite = FavoritesService.isFavorite(item);
+            });
+        })
+        .catch(function (error) {
+            console.error("Error loading data:", error);
         });
-    }
-
-    // Load all categories
-    // Food
-    loadCategory(DataService.getbevrage1, 'bevrage1');
-    loadCategory(DataService.getbevrage2, 'bevrage2');
 
     // Scroll to Section
     $scope.scrollTo = function (sectionId) {
@@ -228,11 +178,6 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
 
     // Ensure favorites are synced on view load
     $scope.syncFavorites();
-
-    $scope.viewItemDetail = function(item) {
-        DataService.setSelectedItem(item);
-        $location.path('/item/' + item.id);
-    };
 }]);
 
 
@@ -252,10 +197,7 @@ myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function 
 }]);
 
 
-// ItemDetailsController
-myApp.controller('ItemDetailController', [
-    '$scope', '$routeParams', 'DataService', 'FavoritesService', '$window', '$timeout',
-    function ($scope, $routeParams, DataService, FavoritesService, $window, $timeout) {
+myApp.controller('ItemDetailController', ['$scope', '$routeParams', 'DataService', 'FavoritesService', '$window', '$timeout',function ($scope, $routeParams, DataService, FavoritesService, $window, $timeout) {
   
       const itemId = parseInt($routeParams.id, 10);
       console.log("Item ID selected:", itemId);
@@ -304,6 +246,4 @@ myApp.controller('ItemDetailController', [
       $scope.goBack = function () {
         $window.history.back();
       };
-    }
-  ]);
-  
+}]);
