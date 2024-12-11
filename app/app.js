@@ -141,6 +141,35 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
             console.error("Error loading data:", error);
         });
 
+        // Function to resize an image to the specified width
+    function resizeImage(imageUrl, targetWidth) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = 'anonymous'; // Handle CORS for external images
+            img.onload = function () {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Calculate the aspect ratio and set canvas dimensions
+                const aspectRatio = img.height / img.width;
+                canvas.width = targetWidth;
+                canvas.height = targetWidth * aspectRatio;
+
+                // Draw the image onto the canvas
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                // Convert the canvas to a data URL (base64 string)
+                const resizedImageUrl = canvas.toDataURL('image/jpeg', 0.7); // Adjust quality as needed
+                resolve(resizedImageUrl);
+            };
+            img.onerror = function () {
+                console.error(`Failed to load image at ${imageUrl}`);
+                reject(`Failed to load image at ${imageUrl}`);
+            };
+            img.src = imageUrl; // Trigger image loading
+        });
+    }
+
     // Scroll to Section
     $scope.scrollTo = function (sectionId) {
         const element = document.getElementById(sectionId);
@@ -178,6 +207,11 @@ myApp.controller('AppController', ['$scope', 'DataService', 'FavoritesService', 
 
     // Ensure favorites are synced on view load
     $scope.syncFavorites();
+
+    $scope.viewItemDetail = function(item) {
+        DataService.setSelectedItem(item);
+        $location.path('/item/' + item.id);
+    };
 }]);
 
 
