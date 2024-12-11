@@ -55,6 +55,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/sweets.html',
             controller: 'AppController'
         })
+        .when('/item/:id', {
+            templateUrl: 'views/item-details.html',
+            controller: 'ItemDetailController'
+        })
         .when('/bevrages', {
             templateUrl: 'views/bevrages.html',
             controller: 'AppController'
@@ -190,4 +194,56 @@ myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function 
             return total + (item.rate || 0);
         }, 0);
     };
+}]);
+
+
+myApp.controller('ItemDetailController', ['$scope', '$routeParams', 'DataService', 'FavoritesService', '$window', '$timeout',function ($scope, $routeParams, DataService, FavoritesService, $window, $timeout) {
+  
+      const itemId = parseInt($routeParams.id, 10);
+      console.log("Item ID selected:", itemId);
+  
+      // Fetch all items and find the selected item
+      DataService.getItems()
+        .then(function (items) {
+          $scope.item = items.find(item => item.id === itemId);
+  
+          if (!$scope.item) {
+            console.log("Item not found.");
+            return;
+          }
+  
+          console.log("Item loaded successfully:", $scope.item);
+  
+          // Sync `isFavorite` status with FavoritesService
+          $scope.item.isFavorite = FavoritesService.isFavorite($scope.item);
+  
+          // heart icon click
+          $timeout(() => {
+            const heartIcon = document.getElementById('heart-icon');
+            if (heartIcon) {
+              heartIcon.click();
+              $timeout(() => {
+                heartIcon.click();
+              }, 1);
+            }
+          }, 0);
+        })
+        .catch(function (error) {
+          console.log("Error fetching items:", error);
+        });
+  
+      // Toggle favorite status
+      $scope.toggleFavorite = function () {
+        if ($scope.item.isFavorite) {
+          FavoritesService.removeFavorite($scope.item);
+        } else {
+          FavoritesService.addFavorite($scope.item);
+        }
+        $scope.item.isFavorite = !$scope.item.isFavorite;
+      };
+  
+      // Go back to the previous page
+      $scope.goBack = function () {
+        $window.history.back();
+      };
 }]);

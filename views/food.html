@@ -59,7 +59,7 @@
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                     <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
                 </div>
                 <div class="item-details">
                     <div class="item-name">{{item.name}}</div>
@@ -78,7 +78,7 @@
                 <div class="image-box">
                     <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
                     <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
-                    <img ng-src="{{item.image}}" alt="{{item.name}}"  loading="lazy">
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
                 </div>
                 <div class="item-details">
                     <div class="item-name">{{item.name}}</div>
