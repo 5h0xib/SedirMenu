@@ -1,0 +1,93 @@
+[
+    {
+        "id": 132,
+        "image": "gallary/CAFE LATTE.jpg",
+        "name": "CAFE LATTE",
+        "rate": 24,
+        "description": "Double shot of espresso wıth 70% hot mılk and 30% mılk form"
+    },
+    {
+        "id": 133,
+        "image": "gallary/CARAMAL LATTE5.jpg",
+        "name": "CARAMEL LATTE",
+        "rate": 26,
+        "description": "Double shot of espresso wıth hot mılk and 30ml caramal syrup toppıng wıth whıpped cream."
+    },
+    {
+        "id": 134,
+        "image": "gallary/SPANISH LATTE.jpg",
+        "name": "SPANISH LATTE",
+        "rate": 30,
+        "description": "30ml condensed mılk wıth 70% hot mılk."
+    },
+    {
+        "id": 135,
+        "image": "gallary/HONEY LATTE.jpg",
+        "name": "HONEY LATTE",
+        "rate": 27,
+        "description": "Double shot of espresso wıth hot mılk and 45ml honey and toppıng wıth whıpped cream."
+    },
+    {
+        "id": 136,
+        "image": "gallary/ICE MOCHA.jpg",
+        "name": "MOCHA",
+        "rate": 25,
+        "description": "Double shot of espresso wıth hot mılk and 15ml chocolate and caramal syrup toppıng wıth whıpped cream."
+    },
+    {
+        "id": 137,
+        "image": "gallary/MOCHA MADNES.jpg",
+        "name": "MOCHA MADNESS",
+        "rate": 27,
+        "description": "Double shot of espresso wıth hot mılk and 15ml chocolate and caramal syrup toppıng wıth whıpped cream."
+    },
+    {
+        "id": 138,
+        "image": "gallary/DUOBLE GRAND MOCHA.jpg",
+        "name": "DOUBLE GRAND MOCHA",
+        "rate": 32,
+        "description": "Double shot of espresso wıth hot mılk and 45ml chocolate syrupe toppıng wıth whıpped cream."
+    },
+    {
+        "id": 139,
+        "image": "gallary/cappuccino.jpg",
+        "name": "CAPPUCCINO",
+        "rate": 24,
+        "description": "Double shot of espresso wıth hot mılk."
+    },
+    {
+        "id": 140,
+        "image": "gallary/FLAT WHITE.jpg",
+        "name": "FLAT WHITE",
+        "rate": 26,
+        "description": "Doluble shot of espresso wıth 90% hot mılk and 10% mılk form."
+    },
+    {
+        "id": 141,
+        "image": "gallary/CONPANO.jpg",
+        "name": "CONPANO",
+        "rate": 28,
+        "description": "Double shot of espresso toppıng wıth whıpped."
+    },
+    {
+        "id": 142,
+        "image": "gallary/macchiato.jpg",
+        "name": "MACCHIATO",
+        "rate": 26,
+        "description": "Double shot of espresso wıth 30% hot mılk."
+    },
+    {
+        "id": 143,
+        "image": "gallary/CORTADO.jpg",
+        "name": "CORTADO",
+        "rate": 33,
+        "description": "Not available in the PDF."
+    },
+    {
+        "id": 146,
+        "image": "gallary/HOT CHOCOLATE.jpg",
+        "name": "HOT CHOCOLATE",
+        "rate": 24,
+        "description": "15ml chocolate sauce wıth 2 table spone coco powder and 70% hot mılk."
+    }
+]

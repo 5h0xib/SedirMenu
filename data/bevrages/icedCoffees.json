@@ -1,0 +1,30 @@
+[    
+    {
+        "id": 148,
+        "image": "gallary/ICED MACCHIATO.jpg",
+        "name": "ICED MACCHIATO",
+        "rate": 26,
+        "description": "Double shot of espresso wıth 70% cold mılk."
+    },
+    {
+        "id": 149,
+        "image": "gallary/ICED MACCHIATO.jpg",
+        "name": "ICED AMERICANO",
+        "rate": 24,
+        "description": "Double shot of espresso wıth 70% cold water."
+    },
+    {
+        "id": 150,
+        "image": "gallary/ICED SPANISH LATTE.jpg",
+        "name": "ICED SPANISH LATTE",
+        "rate": 26,
+        "description": "Double shot of espresso wıth 30ml condensed mılk wıth cold mılk."
+    },
+    {
+        "id": 151,
+        "image": "gallary/ICE MOCHA.jpg",
+        "name": "ICE MOCHA",
+        "rate": 24,
+        "description": "Double shot lof espresso wıth 45ml chocolate sauce toppıng wıth whıpped cream."
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "id": 50,
+        "image": "gallary/bucher meat ball.jpg",
+        "name": "BUCHER MEAT BALL",
+        "rate": 75,
+        "description": "Home made meat bowls, serving with rice,bivas"
+    },
+    {
+        "id": 51,
+        "image": "gallary/cheese meat ball.jpg",
+        "name": "CHEESE MEAT BALL",
+        "rate": 75,
+        "description": "Home made chese rolled meat balls,serving with rice, bivas"
+    },
+    {
+        "id": 52,
+        "image": "gallary/grill chicken brest.jpg",
+        "name": "GRILL CHICKEN BREST",
+        "rate": 75,
+        "description": "chicken breast fillet,rice,grilled cherry tomato,bivas"
+    },
+    {
+        "id": 53,
+        "image": "gallary/beef tenderloin.jpg",
+        "name": "BEEF TENDERLOIN",
+        "rate": 135,
+        "description": "240gr angus beef servıng wıth spınach saute mash patato,chargrılled corn"
+    },
+    {
+        "id": 54,
+        "image": "gallary/lamb chops.jpg",
+        "name": "LAMB CHOPS",
+        "rate": 134,
+        "description": "260gr australlıan lanp chops servıng wıth spınach saute mash patato,chargrılled corn"
+    },
+    {
+        "id": 55,
+        "image": "gallary/ribeye.jpg",
+        "name": "RIBEYE",
+        "rate": 149,
+        "description": "300 gr angus beef servıng wıth spınach saute mash patato,chargrılled corn"
+    },
+    {
+        "id": 56,
+        "image": "gallary/lamb's shank.jpg",
+        "name": "LAMB'S SHANK",
+        "rate": 129,
+        "description": "Lamp shank,mashj patato, broccolı,lamp stock"
+    },
+    {
+        "id": 57,
+        "image": "gallary/hunkar begendi.jpg",
+        "name": "HUNKAR BEGENDI",
+        "rate": 124,
+        "description": "Eggplant pure,beef tenderloın, cherry tomato,garlıc,onıon"
+    },
+    {
+        "id": 58,
+        "image": "gallary/CELTIK KEBAB.jpg",
+        "name": "CELTIK KEBAB",
+        "rate": 109,
+        "description": "Buthcer meatballs,beef tenderloın,crıspy patato,pıde bread, tomato souce,yougurt"
+    },
+    {
+        "id": 59,
+        "image": "gallary/ADANA KEBAB.jpg",
+        "name": "ADANA KEBAB",
+        "rate": 99,
+        "description": "Charcoal grilled homemade minced lamb meat mixed with spices, onion, biwas salad, grill tomato, grill chili and bulgur rice"
+    },
+    {
+        "id": 60,
+        "image": "gallary/MIX GRILL.jpg",
+        "name": "MIX GRILL",
+        "rate": 149,
+        "description": "Grill chicken brest, wings, bucher meat ball, lambchop beef tendorlin"
+    },
+    {
+        "id": 61,
+        "image": "gallary/URFA KEBAB.jpg",
+        "name": "URFA KEBAB",
+        "rate": 99,
+        "description": "Charcoal grilled homemade minced lamb meat mixed with spices, onion, biwas salad, grill tomato, grill chili and bulgur rice"
+    },
+    {
+        "id": 62,
+        "image": "gallary/ADANA DÜRÜM.jpg",
+        "name": "ADANA DÜRÜM",
+        "rate": 90,
+        "description": "Adana kebab sandwich with chopped onion, chili paste and grilled tomato wrapped in lavash bread. Served with french fries and ketchup."
+    },
+    {
+        "id": 63,
+        "image": "gallary/DONER WITH RICE.jpg",
+        "name": "DONER WITH RICE",
+        "rate": 109,
+        "description": "DONER WITH RICE" 
+    },
+    {
+        "id": 64,
+        "image": "gallary/ISKENDER KEBAB.jpg",
+        "name": "ISKENDER KEBAB",
+        "rate": 119,
+        "description": "ISKENDER KEBAB" 
+    },
+    {
+        "id": 65,
+        "image": "gallary/grill salmon.jpg",
+        "name": "GRILL SALMON",
+        "rate": 120,
+        "description": "GRILL SALMON" 
+    },
+    {
+        "id": 66,
+        "image": "gallary/OVEN SEABASS.jpg",
+        "name": "OVEN SEABASS",
+        "rate": 140,
+        "description": "OVEN SEABASS" 
+    },
+    {
+        "id": 67,
+        "image": "gallary/grilled seabass.jpeg",
+        "name": "GRILLED SEABASS",
+        "rate": 130,
+        "description": "GRILLED SEABASS" 
+    }
+]

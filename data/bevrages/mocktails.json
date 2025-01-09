@@ -1,0 +1,37 @@
+[
+    {
+        "id": 88,
+        "image": "gallary/BLUE LAGOON.jpg",
+        "name": "BLUE LAGOON",
+        "rate": 32,
+        "description": "BLUE LAGOON" 
+    },
+    {
+        "id": 89,
+        "image": "gallary/RED GIFFERD.jpg",
+        "name": "RED GİFFERD",
+        "rate": 32,
+        "description": "RED GİFFERD" 
+    },
+    {
+        "id": 90,
+        "image": "gallary/MIX GIFFERD.jpg",
+        "name": "MIX GIFFERD",
+        "rate": 34,
+        "description": "MIX GIFFERD" 
+    },
+    {
+        "id": 91,
+        "image": "gallary/FRESH LEMON MINT.jpg",
+        "name": "FRESH LEMON MINT",
+        "rate": 34,
+        "description": "FRESH LEMON MINT" 
+    },
+    {
+        "id": 92,
+        "image": "gallary/SEDIR MOCKTAILS.jpg",
+        "name": "SEDIR MOCKTAIL",
+        "rate": 40,
+        "description": "SEDIR MOCKTAIL" 
+    }
+]

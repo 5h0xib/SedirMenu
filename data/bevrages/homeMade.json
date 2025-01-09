@@ -1,0 +1,65 @@
+[
+    {
+        "id": 107,
+        "image": "gallary/ORANGE JUICE.jpg",
+        "name": "ORANGE JUICE",
+        "rate": 30,
+        "description": "ORANGE JUICE"
+    },
+    {
+        "id": 108,
+        "image": "gallary/WATERMELON JUICE.jpg",
+        "name": "WATERMELON JUICES",
+        "rate": 34,
+        "description": "WATERMELON JUICES"
+    },
+    {
+        "id": 109,
+        "image": "gallary/APPLE JUICE.jpg",
+        "name": "APPLE JUICE",
+        "rate": 30,
+        "description": "APPLE JUICE"
+    },
+    {
+        "id": 110,
+        "image": "gallary/CARROT JUICE.jpg",
+        "name": "CARROT JUICES",
+        "rate": 30,
+        "description": "CARROT JUICES"
+    },
+    {
+        "id": 111,
+        "image": "gallary/MANGO JUICE.jpg",
+        "name": "MANGO JUICES",
+        "rate": 35,
+        "description": "MANGO JUICES"
+    },
+    {
+        "id": 112,
+        "image": "gallary/POMEGRANATE JUICE.jpg",
+        "name": "POMEGRANATE JUICE",
+        "rate": 35,
+        "description": "POMEGRANATE JUICE"
+    },
+    {
+        "id": 113,
+        "image": "gallary/SEDIR MIX JUICE.jpg",
+        "name": "SEDİR MIX JUICES",
+        "rate": 38,
+        "description": "SEDİR MIX JUICES"
+    },
+    {
+        "id": 114,
+        "image": "gallary/PINEAPPLE JUICE.jpg",
+        "name": "PINEAPPLE JUICES",
+        "rate": 35,
+        "description": "PINEAPPLE JUICES"
+    },
+    {
+        "id": 115,
+        "image": "gallary/PISTACHIO AVOCADO JUICE.jpg",
+        "name": "PISTACHIO AVOCADO JUICES",
+        "rate": 40,
+        "description": "PISTACHIO AVOCADO JUICES"
+    }
+]

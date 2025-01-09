@@ -1,0 +1,79 @@
+[
+    {
+        "id": 250,
+        "image": "gallary/hummus.jpg",
+        "name": "HUMMUS",
+        "rate": 28,
+        "description": "Cheakpeas, tahinalemon, salt"
+    },
+    {
+        "id": 26,
+        "image": "gallary/haydari.jpg",
+        "name": "HAYDARİ",
+        "rate": 28,
+        "description": "Yougurt, dry mint"
+    },
+    {
+        "id": 27,
+        "image": "gallary/eggplant salad.jpg",
+        "name": "EGGPLANT SALAD",
+        "rate": 28,
+        "description": "Grillend eggplant, grillend red capsicum, onion"
+    },
+    {
+        "id": 28,
+        "image": "gallary/Dried Eggplant Stuffed.jpg",
+        "name": "Dried Eggplant Stuffed",
+        "rate": 49,
+        "description": "Vine leaves stuffed with seasoned rice. Served with special yogurt and iskendar sauce"
+    },
+    {
+        "id": 29,
+        "image": "gallary/Yaprak Sarma.jpg",
+        "name": "Yaprak Sarma",
+        "rate": 45,
+        "description": "Vine leaves stuffed with seasoned rice. Served with special yogurt and iskendar sauce."
+    },
+    {
+        "id": 30,
+        "image": "gallary/salmon tartare.jpg",
+        "name": "salmon tartare",
+        "rate": 65,
+        "description": "SALMON FILLET,DIJON MUSTART,DILL LEAVES,SALT,WHITE PEPPER"
+    },
+    {
+        "id": 31,
+        "image": "gallary/toast skagen.jpg",
+        "name": "TOAST SKAGEN",
+        "rate": 65,
+        "description": "Caviar,white,radish,mayanosise,dill ,leaves,lemon,juice,salt,white,peper"
+    },
+    {
+        "id": 32,
+        "image": "gallary/cheese mashroom.jpg",
+        "name": "CHEESE MASHROOM",
+        "rate": 40,
+        "description": "Mashroom filled with cheese"
+    },
+    {
+        "id": 33,
+        "image": "gallary/cheese roll.jpg",
+        "name": "CHEESE ROLL",
+        "rate": 45,
+        "description": "ROLLS filled with cheese"
+    },
+    {
+        "id": 34,
+        "image": "gallary/onion ring.jpg",
+        "name": "ONION RING",
+        "rate": 30,
+        "description": "Crispy fried Rings Onion"
+    },
+    {
+        "id": 35,
+        "image": "gallary/dynamite shrimp.jpeg",
+        "name": "DYNAMITE SHRIMP",
+        "rate": 65,
+        "description": "DYNAMITE SHRIMP"
+    }
+]

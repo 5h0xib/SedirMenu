@@ -1,0 +1,23 @@
+[
+    {
+        "id": 68,
+        "image": "gallary/Beef Burger1.jpg",
+        "name": "Beef Burger",
+        "rate": 50,
+        "description": "Beef Burger" 
+    },
+    {
+        "id": 69,
+        "image": "gallary/Chicken Burger1.jpg",
+        "name": "Chicken Burger",
+        "rate": 45,
+        "description": "Chicken Burger" 
+    },
+    {
+        "id": 70,
+        "image": "gallary/Spaghetti1.jpg",
+        "name": "Spaghetti",
+        "rate": 45,
+        "description": "Spaghetti" 
+    }
+]

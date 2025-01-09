@@ -1,0 +1,44 @@
+[
+    {
+        "id": 71,
+        "image": "gallary/BAKLAVA CARROT SLICE.jpg",
+        "name": "BAKLAVA CARROT SLICE",
+        "rate": 56,
+        "description": "WITH ICE CREAM 70 AED" 
+    },
+    {
+        "id": 72,
+        "image": "gallary/COLD BAKLAVA.jpg",
+        "name": "COLD BAKLAVA",
+        "rate": 61,
+        "description": "COLD BAKLAVA" 
+    },
+    {
+        "id": 77,
+        "image": "gallary/TRALICHE WITH CARAMEL.jpg",
+        "name": "TRALICHE WITH CARAMEL",
+        "rate": 55,
+        "description": "TRALICHE WITH CARAMEL" 
+    },
+    {
+        "id": 78,
+        "image": "gallary/SEDİR BROWNIE.jpg",
+        "name": "SEDİR BROWNIE",
+        "rate": 80,
+        "description": "SEDİR BROWNIE" 
+    },
+    {
+        "id": 79,
+        "image": "gallary/SEDİR DREAM.jpg",
+        "name": "SEDİR DREAM",
+        "rate": 85,
+        "description": "SEDİR DREAM" 
+    },
+    {
+        "id": 80,
+        "image": "gallary/waffle.jpg",
+        "name": "WAFFLE",
+        "rate": 60,
+        "description": "WAFFLE" 
+    }
+]

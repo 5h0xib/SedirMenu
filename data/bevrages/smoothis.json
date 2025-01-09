@@ -1,0 +1,37 @@
+[
+    {
+        "id": 99,
+        "image": "gallary/MANGO SMOOTHIES.jpg",
+        "name": "MONGO SMOTHE",
+        "rate": 38,
+        "description": "MONGO SMOTHE"
+    },
+    {
+        "id": 100,
+        "image": "gallary/PINEAPPLE SMOOTHIES.jpg",
+        "name": "PINEAPPLE SMOTHE",
+        "rate": 38,
+        "description": "PINEAPPLE SMOTHE"
+    },
+    {
+        "id": 101,
+        "image": "gallary/WATERMELON SMOOTHIES.jpg",
+        "name": "WATERMELON SMOTHE",
+        "rate": 38,
+        "description": "WATERMELON SMOTHE"
+    },
+    {
+        "id": 102,
+        "image": "gallary/STRAWBERRY SMOOTHIES.jpg",
+        "name": "STRAWBERRY SMOTHE",
+        "rate": 38,
+        "description": "STRAWBERRY SMOTHE"
+    },
+    {
+        "id": 103,
+        "image": "gallary/BANANA AND HONEY SMOOTHIES.jpg",
+        "name": "BANANA AND HONEY SMOTHE",
+        "rate": 42,
+        "description": "BANANA AND HONEY SMOTHE"
+    }
+]

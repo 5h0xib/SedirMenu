@@ -1,0 +1,44 @@
+[
+    {
+        "id": 93,
+        "image": "gallary/STRAWBERRY MILKSHAKE.jpg",
+        "name": "STRAWBERRY MILKSHAKE",
+        "rate": 38,
+        "description": "STRAWBERRY MILKSHAKE"
+    },
+    {
+        "id": 94,
+        "image": "gallary/Chocolate Milkshake.jpg",
+        "name": "CHOCOLATE MILKSHAKE",
+        "rate": 38,
+        "description": "CHOCOLATE MILKSHAKE" 
+    },
+    {
+        "id": 95,
+        "image": "gallary/blueberry Milkshake.jpg",
+        "name": "BLUBERRY MILKSHAKE",
+        "rate": 38,
+        "description": "BLUBERRY MILKSHAKE" 
+    },
+    {
+        "id": 96,
+        "image": "gallary/OREO MILKSHAKE.jpg",
+        "name": "OREO MILKSHAKE",
+        "rate": 40,
+        "description": "OREO MILKSHAKE" 
+    },
+    {
+        "id": 97,
+        "image": "gallary/LOTUS MILKSHAKE.jpg",
+        "name": "LOTUS MILKSHAKE",
+        "rate": 40,
+        "description": "LOTUS MILKSHAKE" 
+    },
+    {
+        "id": 98,
+        "image": "gallary/AVOCADO MILKSHAKE.jpg",
+        "name": "AVACADO MILKSHAKE",
+        "rate": 40,
+        "description": "AVACADO MILKSHAKE" 
+    }
+]

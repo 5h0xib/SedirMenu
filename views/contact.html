@@ -1,0 +1,180 @@
+<div class="content">
+    <div class="contact-info">
+        <div class="contact-items">
+            <div class="contact-item">
+            <a rel="nofollow" href="mailto:sedirdubai@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mb-0">test@gmail.com</span>
+            </a>
+            </div>
+            
+            <div class="contact-item">
+            <a rel="nofollow" href="tel:+971 50 586 5282">
+                <i class="fa-solid fa-phone"></i>
+                <span class="mb-0">+91 98660 99144</span>
+            </a>              
+            </div>
+
+            <div class="contact-item">
+            <a rel="nofollow" href="https://maps.app.goo.gl/8tYkEuECgKNjnbrF9">
+                <i class="fa-solid fa-location-dot"></i>
+                <span class="mb-0">Google Maps</span>
+            </a>              
+            </div>
+        </div>
+    </div>
+    
+    <div class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.897438842993!2d55.13130097537767!3d25.07146507779215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f1300160ef56f%3A0xcc6cfa419a7838b8!2sSedir%20Turkish%20Gourmet!5e0!3m2!1sen!2sin!4v1732021825446!5m2!1sen!2sin" width="320" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <p>Fill Out the Form and<br>We will Reach Out Shortly</p>
+    <form name="contactForm" novalidate action="https://api.web3forms.com/submit?redirect=https://5h0xib.github.io/SedirMenu/success.html" method="post">
+        <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+        <h5>Contact Us</h5>
+        
+        <input type="text" placeholder="name*" name="name" ng-model="contact.name" ng-required="true"/>
+        <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+            <small>Enter a valid Name</small>
+        </div>
+        <input type="email" placeholder="Email*" name="email" ng-model="contact.email" ng-required="true"/>
+        <div ng-show="contactForm.email.$touched && contactForm.email.$invalid">
+            <small>Enter a valid Email</small>
+        </div>
+        <input type="number" placeholder="Number*" name="Number" ng-model="contact.Number" ng-required="true"/>
+        <div ng-show="contactForm.Number.$touched && contactForm.Number.$invalid">
+            <small>Enter a valid Phone No</small>
+        </div>
+        <textarea placeholder="Your Message"  name="message" ng-model="contact.message" ng-required="true"></textarea>
+        <input class="contact-send-btn" type="submit" value="Send" ng-disabled="contactForm.$invalid" />
+    </form>
+</div>
+
+<style>
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* our-contact-info */
+.contact-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 10px #0000002d;
+    height: 200px;
+    width: 320px;
+    border-radius: 10px;
+}
+
+.contact-info .contact-items h3{
+    text-align: center;
+    font-size: 25px;
+    color: #313131;
+    margin-bottom: 50px;
+}
+
+.contact-info .contact-items .contact-item{
+    margin: 20px;
+    display: flex;
+    font-size: 20px;
+}
+
+.contact-info .contact-items .contact-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.contact-info .contact-items .contact-item i{
+    margin-right: 10px;
+}
+
+.contact-info .contact-items .contact-item span{
+    font-size: 20px;
+}
+
+/* google maps */
+.google-maps {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-maps iframe {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #0000002d;
+}
+
+/* FORM */
+.content p{
+    text-align: center;
+    margin-top: 50px;
+}
+
+form h5{
+    color: rgb(39, 39, 39);
+    text-align: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    margin: 50px;
+    margin-top: 0px;
+    margin-bottom: 120px;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-right: 30px;
+    padding-top: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px #0000002d;
+    border-radius: 8px;
+    width: 265px;
+}
+
+form input,textarea{
+    border-radius: 4px;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    border: none;
+    box-shadow: 0px 0px 4px #00000057;
+    resize: none;
+}
+
+textarea{
+    height: 50px;
+}
+
+form small {
+    color: red;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+    box-shadow: 0px 0px 6px #ff0000;
+}
+
+.contact-send-btn{
+    width: 70px;
+    background-color: #ffffff;
+}
+
+input[disabled='disabled']{
+    background-color: #d6d6d6;
+    cursor: not-allowed !important;
+}
+
+</style>

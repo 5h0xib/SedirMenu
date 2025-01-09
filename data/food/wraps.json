@@ -1,0 +1,16 @@
+[
+    {
+        "id": 48,
+        "image": "gallary/chicken wrap.jpg",
+        "name": "CHICKEN WRAP",
+        "rate": 60,
+        "description": "PENNE ARABIATTA"
+    },
+    {
+        "id": 49,
+        "image": "gallary/BEEF WRAP.jpg",
+        "name": "BEEF WRAP",
+        "rate": 75,
+        "description": "BEEF WRAP"
+    }
+]

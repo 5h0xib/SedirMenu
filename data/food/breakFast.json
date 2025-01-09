@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "image": "gallary/BreakfastMenu_1.jpg",
+        "name": "SEDIR KING BREAKFAST (2,4.PERSONS)",
+        "rate": 248,
+        "description": "A mix of cheese and sigara böreği, kuymak, sucuk, potato wedges, fried eggs, ajuka, honey with kaymak, tahini pekmez, apricot , nutella, strawberry, cherry jam, mix fruit, vegetables, labneh, mix olives and unlimited tea"
+    },
+    {
+        "id": 2,
+        "image": "gallary/Sedir_Breakfast_3.jpg",
+        "name": "SEDİR SERPME BREAKFAST (2 PERSON)",
+        "rate": 179,
+        "description": "Cheese platter, menemen and fried egg, veg potato, cheese roll, nutella tahina, molasses, labneh, 5 type of home made turkish jam, with one turkish tea pot, fresh orange juice"
+    },
+    {
+        "id": 3,
+        "image": "gallary/SINI BREAKFAST.jpg",
+        "name": "SINI BREAKFAST",
+        "rate": 119,
+        "description": "Fried egg, small cheese platter, mix fruit, cucumber,tomato, tahina &moleses and 2 type jams" 
+    },
+    {
+        "id": 4,
+        "image": "gallary/HEALTHY BREAKFAST.jpg",
+        "name": "HEALTHY BREAKFAST",
+        "rate": 85,
+        "description": "Avacado toast with poached eggs, zeytin, mixed nuts with honey and creamy peanut butter" 
+    },
+    {
+        "id": 5,
+        "image": "gallary/SINGLE BREAKFAST.jpg",
+        "name": "SINGLE BREAKFAST",
+        "rate": 89,
+        "description": "Fried egg, small cheese platter, mix fruit, cucumber, tomato, 2 type jams and nutella" 
+    },
+    {
+        "id": 6,
+        "image": "gallary/omelette.jpg",
+        "name": "OMELETTE",
+        "rate": 28,
+        "description": "With tomato and cucumber" 
+    },
+    {
+        "id": 7,
+        "image": "gallary/fried egg with meat.jpg",
+        "name": "FRİED EGG WITH MEAT",
+        "rate": 45,
+        "description": "fried egg with meat"
+    },
+    {
+        "id": 9,
+        "image": "gallary/cheese omelette.jpg",
+        "name": "CHEESE OMELETTTE",
+        "rate": 30,
+        "description": "Cucumber and tomato"
+    },
+    {
+        "id": 10,
+        "image": "gallary/sunny side up.jpg",
+        "name": "SUNNY SIDE UP",
+        "rate": 26,
+        "description": "SUNNY SIDE UP"
+    },
+    {
+        "id": 11,
+        "image": "gallary/menemen , menemen with cheese.jpg",
+        "name": "MENEMEN",
+        "rate": 35,
+        "description": "MENEMEN"
+    },
+    {
+        "id": 12,
+        "image": "gallary/menemen , menemen with cheese.jpg",
+        "name": "MENEMEN WITH CHEESE",
+        "rate": 39,
+        "description": "MENEMEN WITH CHEESE"
+    },
+    {
+        "id": 13,
+        "image": "gallary/SIMIT.jpg",
+        "name": "SIMIT",
+        "rate": 12,
+        "description": "Crisp, sesame-crusted Turkish bread rings"
+    },
+    {
+        "id": 14,
+        "image": "gallary/NUTELLA SIMIT.jpg",
+        "name": "NUTELLA SIMIT",
+        "rate": 32,
+        "description": "Crisp, sesame-crusted Turkish bread rings with nitella"
+    },
+    {
+        "id": 15,
+        "image": "gallary/SIMIT SANDWICH.jpg",
+        "name": "SIMIT SANDWICH",
+        "rate": 34,
+        "description": "Peynir, domates, salatalik,"
+    },
+    {
+        "id": 16,
+        "image": "gallary/FRENCH FRIES.jpg",
+        "name": "FRENCH FRIES",
+        "rate": 25,
+        "description": "Golden, crispy potato sticks of joy"
+    }
+]

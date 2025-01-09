@@ -1,0 +1,23 @@
+[
+    {
+        "id": 39,
+        "image": "gallary/filet of beef pizza.jpg",
+        "name": "FILET OF BEEF PIZZA",
+        "rate": 99,
+        "description": "FILET OF BEEF PIZZA"
+    },
+    {
+        "id": 40,
+        "image": "gallary/barbeku chicken pizza.jpg",
+        "name": "BARBEKU CHICKEN PIZZA",
+        "rate": 89,
+        "description": "BARBEKU CHICKEN PIZZA"
+    },
+    {
+        "id": 41,
+        "image": "gallary/pizza margarita.jpg",
+        "name": "PIZZA MARGARITA",
+        "rate": 79,
+        "description": "PIZZA MARGARITA"
+    }
+]

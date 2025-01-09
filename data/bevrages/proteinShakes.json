@@ -1,0 +1,23 @@
+[
+    {
+        "id": 104,
+        "image": "gallary/MANGO SMOOTHIES.jpg",
+        "name": "BANANA PROTINE SHAKE",
+        "rate": 43,
+        "description": "Almond 7gm protein powder 1 table spoon ice 120gm and Milk 180ml.."
+    },
+    {
+        "id": 105,
+        "image": "gallary/AVOCADO PROTINE SHAKE.jpg",
+        "name": "BANANA PROTEIN SHAKE",
+        "rate": 43,
+        "description": "Almond 7gm protein powder 1 table spoon ice 120gm and Milk 180ml.."
+    },
+    {
+        "id": 106,
+        "image": "gallary/COFFEE PROTINE SHAKE.jpg",
+        "name": "COFFEE PROTEN SHAKE",
+        "rate": 43,
+        "description": "Almond 7gm protein powder 1 table spoon ice 120gm and Milk 180ml.."
+    }
+]

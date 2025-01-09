@@ -1,0 +1,37 @@
+[
+    {
+        "id": 19,
+        "image": "gallary/gavurdag salad.jpeg",
+        "name": "GAVURDAG SALAD",
+        "rate": 45,
+        "description": "Turkish vegetable medley"
+    },
+    {
+        "id": 20,
+        "image": "gallary/CESAR SHRIMP SALAD.jpg",
+        "name": "CESAR SHRIMP SALAD",
+        "rate": 55,
+        "description": "Shrimp Salad"
+    },
+    {
+        "id": 21,
+        "image": "gallary/asian crunchy slaw chicken salad.jpg",
+        "name": "ASIAN CRUNCHY SLAW CHICHKEN SALAD",
+        "rate": 52,
+        "description": "Chicken, crunchy bread fleykes Red Cabbage, roman lettuce, asian sauce"
+    },
+    {
+        "id": 22,
+        "image": "gallary/BEETROOT ROCCO SALAD.jpg",
+        "name": "BEETROOT ROCCO SALAD",
+        "rate": 49,
+        "description": "beetroot, rocket, tomato, red onion, walnut traditional turkish ezine cheese"
+    },
+    {
+        "id": 23,
+        "image": "gallary/quinoa avocado salad.jpg",
+        "name": "QUINOA AVOCADO SALAD",
+        "rate": 45,
+        "description": "Qinoa, bay rocket, pomogranete, seeds, cherry tomato, lemon, pomagranete, molasses"
+    }
+]

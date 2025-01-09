@@ -1,0 +1,100 @@
+[
+    {
+        "id": 118,
+        "image": "gallary/PEPSI.jpg",
+        "name": "PEPSİ",
+        "rate": 18,
+        "description": "PEPSİ DIET"
+    },
+    {
+        "id": 119,
+        "image": "gallary/PEPSI DITE.jpg",
+        "name": "PEPSİ DIET",
+        "rate": 18,
+        "description": "PEPSİ DIET"
+    },
+    {
+        "id": 120,
+        "image": "gallary/RED BULL.jpg",
+        "name": "RED BULL",
+        "rate": 18,
+        "description": "RED BULL"
+    },
+    {
+        "id": 121,
+        "image": "gallary/RED BULL (2).jpg",
+        "name": "RED BULL SUGER FREE",
+        "rate": 18,
+        "description": "SUGER FREE"
+    },
+    {
+        "id": 122,
+        "image": "gallary/MARINDA.jpg",
+        "name": "MARINDA",
+        "rate": 18,
+        "description": "MARINDA"
+    },
+    {
+        "id": 123,
+        "image": "gallary/NIGDE GAZOZ.jpg",
+        "name": "NİĞDE GAZOZ",
+        "rate": 18,
+        "description": "NİĞDE GAZOZ"
+    },
+    {
+        "id": 124,
+        "image": "gallary/SPRITE.jpg",
+        "name": "SPRITE",
+        "rate": 18,
+        "description": "SPRITE"
+    },
+    {
+        "id": 125,
+        "image": "gallary/AYRAN.jpg",
+        "name": "AYRAN",
+        "rate": 22,
+        "description": "AYRAN"
+    },
+    {
+        "id": 126,
+        "image": "gallary/ICE TEA LEMON.jpg",
+        "name": "ICE TEA LEMON",
+        "rate": 24,
+        "description": "ICE TEA LEMON"
+    },
+    {
+        "id": 127,
+        "image": "gallary/ICE TEA PEACH.jpg",
+        "name": "ICE TEA PEACH",
+        "rate": 24,
+        "description": "ICE TEA PEACH"
+    },
+    {
+        "id": 128,
+        "image": "gallary/MINERAL WATER.jpg",
+        "name": "MINERAL WATER",
+        "rate": 19,
+        "description": "MINERAL WATER"
+    },
+    {
+        "id": 129,
+        "image": "gallary/SMALL WATER 330ML.jpg",
+        "name": "STILL WATER (330CL)",
+        "rate": 16,
+        "description": "STILL WATER (330CL)"
+    },
+    {
+        "id": 130,
+        "image": "gallary/BIG WATER 750ML.jpg",
+        "name": "STILL WATER (750CL)",
+        "rate": 25,
+        "description": "STILL WATER (750CL)"
+    },
+    {
+        "id": 131,
+        "image": "gallary/SPARKLING WATER 750ML.jpg",
+        "name": "SPARKLING WATER (750CL)",
+        "rate": 28,
+        "description": "SPARKLING WATER (750CL)"
+    }
+]

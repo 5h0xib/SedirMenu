@@ -1,0 +1,16 @@
+[
+    {
+        "id": 81,
+        "image": "gallary/MIX FRUIT PLATE.jpg",
+        "name": "MIX FRUIT PLATE",
+        "rate": 75,
+        "description": "MIX FRUIT PLATE" 
+    },
+    {
+        "id": 82,
+        "image": "gallary/MİX NUTS PLATE.jpg",
+        "name": "MİX NUTS PLATE",
+        "rate": 50,
+        "description": "MİX NUTS PLATE" 
+    }
+]

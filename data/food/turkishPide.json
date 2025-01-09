@@ -1,0 +1,23 @@
+[
+    {
+        "id": 36,
+        "image": "gallary/pide with cheese1.jpg",
+        "name": "PIDE WITH CHEESE",
+        "rate": 65,
+        "description": "Oven baget pide topped with cheese"
+    },
+    {
+        "id": 37,
+        "image": "gallary/pide with kusbasi1.jpg",
+        "name": "PIDE WITH KUSBASI",
+        "rate": 79,
+        "description": "Oven baget pide topped with beef cubes capsicum tomato"
+    },
+    {
+        "id": 38,
+        "image": "gallary/pide with sucuk1.jpg",
+        "name": "PIDE WİTH SUCUK",
+        "rate": 79,
+        "description": "Oven baget pide topped with cheese and sujuk"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 152,
+        "image": "gallary/TURKISH TEA.jpg",
+        "name": "TURKISH TEA",
+        "rate": 16,
+        "description": "Turkish Tea"
+    },
+    {
+        "id": 153,
+        "image": "gallary/TEA POT.jpg",
+        "name": "TURKISH TEA POT",
+        "rate": 45,
+        "description": "Turkish Tea Pot"
+    },
+    {
+        "id": 154,
+        "image": "gallary/GREEN TEA.jpg",
+        "name": "GREEN TEA",
+        "rate": 22,
+        "description": "Green Tea"
+    },
+    {
+        "id": 155,
+        "image": "gallary/HIBICUS TEA.jpg",
+        "name": "HIBISCUS TEA",
+        "rate": 22,
+        "description": "Hibiscus Tea"
+    },
+    {
+        "id": 156,
+        "image": "gallary/CHAMOMILE TEA.jpg",
+        "name": "CHAMOMILE TEA",
+        "rate": 22,
+        "description": "Chamomile Tea"
+    },
+    {
+        "id": 158,
+        "image": "gallary/GINGER TEA.jpg",
+        "name": "GINGER TEA",
+        "rate": 22,
+        "description": "Ginger Tea"
+    },
+    {
+        "id": 159,
+        "image": "gallary/GINGER HONEY TEA.jpg",
+        "name": "GINGER HONEY TEA",
+        "rate": 26,
+        "description": "Ginger Honey Tea"
+    },
+    {
+        "id": 160,
+        "image": "gallary/english breakfast tea.jpg",
+        "name": "ENGLISH BREAKFAST TEA",
+        "rate": 22,
+        "description": "English breakfast tea"
+    }
+]
