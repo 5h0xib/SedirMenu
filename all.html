@@ -1,0 +1,741 @@
+
+<!-- ALL PAGE -->
+<div class="Main">
+    <div class="horizontal-nav">
+        <div class="nav-container">
+            <!------------------------ Food -------------------------->
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Break-Fast')">Break Fast</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Main-Course')">Main Course</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Appetizers')">Appetizers</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Burgers')">Burgers</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Kids-Menu')">Kids Menu</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Pasta')">Pasta</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Pizza')">Pizza</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Salads')">Salads</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Soups')">Soups</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Turkish-Pide')">Turkish Pide</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Wraps')">Wraps</a>
+            </div>
+    
+            <!----------------------- Beverages ------------------------------->
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Home-Made')">Home Made</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Milk-Shakes')">Milk Shakes</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Mocktails')">Mocktails</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Mojithos')">Mojithos</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Protein-Shakes')">Protein Shakes</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Smoothis')">Smoothis</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Soft-Drinks')">Soft Drinks</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('hotCoffees')">Hot Coffees</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('icedCoffees')">Iced Coffees</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Teas')">Teas</a>
+            </div>
+    
+            <!------------------------ Sweets ---------------------->
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Deserts')">Deserts</a>
+            </div>
+            <div class="links">
+                <a class="nav-item" ng-click="scrollTo('Fruits')">Fruits</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dir-body">
+        <!-- Order Bar -->
+        <div class="order-bar">
+            <!-- <button ng-click="order='rate'">Price Sort</button> -->
+            <input type="text" placeholder="Search..." ng-model="search">
+        </div>
+
+        <!--------------------------- FOOD ---------------------------------->
+
+        <!-- BreakFast -->
+        <h1 ng-if="getFilteredItems(BreakFast).length > 0">BreakFast</h1>
+        <div class="list-box" id="Break-Fast" ng-if="getFilteredItems(BreakFast).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(BreakFast) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MainCourse -->
+        <h1 ng-if="getFilteredItems(MainCourse).length > 0">MainCourse</h1>
+        <div class="list-box" id="Main-Course" ng-if="getFilteredItems(MainCourse).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(MainCourse) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appetizers -->
+        <h1 ng-if="getFilteredItems(Appetizers).length > 0">Appetizers</h1>
+        <div class="list-box" id="Appetizers" ng-if="getFilteredItems(Appetizers).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Appetizers) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Burgers -->
+        <h1 ng-if="getFilteredItems(Burgers).length > 0">Burgers</h1>
+        <div class="list-box" id="Burgers" ng-if="getFilteredItems(Burgers).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Burgers) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KidsMenu -->
+        <h1 ng-if="getFilteredItems(KidsMenu).length > 0">Kids Menu</h1>
+        <div class="list-box" id="Kids-Menu" ng-if="getFilteredItems(KidsMenu).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(KidsMenu) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pasta -->
+        <h1 ng-if="getFilteredItems(Pasta).length > 0">Pasta</h1>
+        <div class="list-box" id="Pasta" ng-if="getFilteredItems(Pasta).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Pasta) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- pizza -->
+        <h1 ng-if="getFilteredItems(Pizza).length > 0">Pizza</h1>
+        <div class="list-box" id="Pizza" ng-if="getFilteredItems(Pizza).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Pizza) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salads -->
+        <h1 ng-if="getFilteredItems(Salads).length > 0">Salads</h1>
+        <div class="list-box" id="Salads" ng-if="getFilteredItems(Salads).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Salads) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soups -->
+        <h1 ng-if="getFilteredItems(Soups).length > 0">Soups</h1>
+        <div class="list-box" id="Soups" ng-if="getFilteredItems(Soups).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Soups) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TurkishPide -->
+        <h1 ng-if="getFilteredItems(TurkishPide).length > 0">Turkish Pide</h1>
+        <div class="list-box" id="Turkish-Pide" ng-if="getFilteredItems(TurkishPide).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(TurkishPide) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wraps -->
+        <h1 ng-if="getFilteredItems(Wraps).length > 0">Wraps</h1>
+        <div class="list-box" id="Wraps" ng-if="getFilteredItems(Wraps).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Wraps) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!------------------------- BEVRAGES ---------------------------------->
+
+        <!-- Home Made -->
+        <h1 ng-if="getFilteredItems(HomeMade).length > 0">Home Made</h1>
+        <div class="list-box" id="Home-Made" ng-if="getFilteredItems(HomeMade).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(HomeMade) | orderBy: order">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{ item.name }}</div>
+                    <div class="price">{{ item.rate | currency:'AED ':0 }}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Milk Shakes -->
+        <h1 ng-if="getFilteredItems(MilkShakes).length > 0">Milk Shakes</h1>
+        <div class="list-box" id="Milk-Shakes" ng-if="getFilteredItems(MilkShakes).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(MilkShakes) | orderBy: order">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mocktails -->
+        <h1 ng-if="getFilteredItems(MockTails).length > 0">Mocktails</h1>
+        <div class="list-box" id="Mocktails" ng-if="getFilteredItems(MockTails).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(MockTails) | orderBy: order">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mojithos -->
+        <h1 ng-if="getFilteredItems(Mojithos).length > 0">Mojithos</h1>
+        <div class="list-box" id="Mojithos" ng-if="getFilteredItems(Mojithos).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Mojithos) | orderBy: order">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protein Shakes -->
+        <h1 ng-if="getFilteredItems(ProteinShakes).length > 0">Protein Shakes</h1>
+        <div class="list-box" id="Protein-Shakes" ng-if="getFilteredItems(ProteinShakes).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(ProteinShakes) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smoothies -->
+        <h1 ng-if="getFilteredItems(Smoothis).length > 0">Smoothies</h1>
+        <div class="list-box" id="Smoothis" ng-if="getFilteredItems(Smoothis).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Smoothis) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Drinks -->
+        <h1 ng-if="getFilteredItems(SoftDrinks).length > 0">Soft Drinks</h1>
+        <div class="list-box" id="Soft-Drinks" ng-if="getFilteredItems(SoftDrinks).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(SoftDrinks) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hot Coffees -->
+        <h1 ng-if="getFilteredItems(hotCoffees).length > 0">Hot Coffees</h1>
+        <div class="list-box" id="hotCoffees" ng-if="getFilteredItems(hotCoffees).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(hotCoffees) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iced Coffees -->
+        <h1 ng-if="getFilteredItems(icedCoffees).length > 0">Iced Coffees</h1>
+        <div class="list-box" id="icedCoffees" ng-if="getFilteredItems(icedCoffees).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(icedCoffees) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teas -->
+        <h1 ng-if="getFilteredItems(Teas).length > 0">Teas</h1>
+        <div class="list-box" id="Teas" ng-if="getFilteredItems(Teas).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Teas) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!------------------------- SWEETS ---------------------------------->
+
+        <!-- Deserts -->
+        <h1 ng-if="getFilteredItems(Deserts).length > 0">Deserts</h1>
+        <div class="list-box" id="Deserts" ng-if="getFilteredItems(Deserts).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Deserts) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fruits -->
+        <h1 ng-if="getFilteredItems(Fruits).length > 0">Fruits</h1>
+        <div class="list-box" id="Fruits" ng-if="getFilteredItems(Fruits).length > 0">
+            <div class="item-box" ng-repeat="item in getFilteredItems(Fruits) | orderBy: order | filter: search">
+                <div class="image-box">
+                    <i id="Plain-hart" class="fa-regular fa-heart" ng-click="toggleFavorite(item)" ng-show="!item.isFavorite"></i>
+                    <i id="Solid-hart" class="fa-solid fa-heart" style="color: red;" ng-click="toggleFavorite(item)" ng-show="item.isFavorite"></i>
+                    <a href="#!/item/{{item.id}}"><img ng-src="{{item.image}}" alt="{{item.name}}" loading="lazy"></a>
+                </div>
+                <div class="item-details">
+                    <div class="item-name">{{item.name}}</div>
+                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* General Main Container Styling */
+    .Main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .Main .horizontal-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border: none;
+        background-color: #ffffff;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar {
+        height: 5px; /* Adjust the height of the scrollbar */
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb {
+        background: #004e00; /* Color of the scrollbar thumb */
+        border-radius: 10px; /* Rounded corners */
+        transition: 0.3s ease-in-out;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-thumb:hover {
+        background: #006800; /* Color of the scrollbar thumb on hover */
+        transition: 0.3s ease-in-out;
+    }
+    
+    .Main .horizontal-nav .nav-container::-webkit-scrollbar-track {
+        background: #e6e6e6; /* Background of the scrollbar track */
+        border-radius: 10px; /* Rounded corners */
+    }
+    
+    
+    .Main .horizontal-nav .nav-container {
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .Main .horizontal-nav .nav-container .links{
+        height: 40px;
+        margin-top: 10px;
+    }
+    
+    .Main .horizontal-nav .nav-container .links a{
+        margin: 7px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 1px 1px 5px 1px #003b0025;
+        border: none;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+    
+    .Main .dir-body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .Main .dir-body h1{
+        font-size: 30px;
+        text-transform: capitalize;
+        font-weight: 100;
+    }
+    
+    
+    
+    /* Order,Search Bar Styling */
+    .order-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .order-bar button {
+        padding: 7px;
+        font-size: 16px;
+        margin: 5px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 4px #00000057;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .order-bar button:hover {
+        background-color: #f5f5f5;
+    }
+    
+    .order-bar input {
+        padding: 7px;
+        font-size: 16px;
+        margin: 3px;
+        border: none;
+        box-shadow: 0px 0px 4px #00000057;
+        border-radius: 5px;
+        width: 250px;
+    }
+    
+    /* List Box Styling */
+    .list-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #0a5200;
+    }
+    
+    /* Item Box Styling */
+    .item-box {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 5px #0000001a;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative; /* Important for positioning description */
+    }
+    
+    .item-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Image Styling */
+    .image-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    
+    .image-box i {
+        position: absolute;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 50px;
+        background: white;
+        text-shadow: 0px 0px 12px rgb(255, 255, 255);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.171);
+        z-index: 5;
+    }
+    
+    /* Item Details Styling */
+    .item-details {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .item-details .item-name {
+        font-size: 11px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .item-details .price {
+        font-size: 11px;
+        margin: 2px;
+        font-weight: bold;
+        color: #006618;
+        text-align: center;
+    }
+    
+    /* Description Styling */
+    .item-description {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        color: white;
+        padding: 15px;
+        font-size: 14px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+    }
+    
+    /* Hover Effect: Show Description */
+    .item-box:hover .item-description {
+        opacity: 1;
+        transform: translateY(0); /* Slide it up */
+    }
+    
+    
+    /* Animation */
+    
+    .item-box.ng-enter {
+        transition: 0.6s linear all;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    .item-box.ng-enter.ng-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    .item-box.ng-leave {
+        transition: 0.2s linear all;
+        opacity: 0.5;
+        transform: translateX(0px);
+    }
+    
+    .item-box.ng-leave.ng-leave-active {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    /* #Plain-hart */
+    #Plain-hart { 
+        transition: 0.5s linear all; 
+        opacity: 1; 
+        transform: scale(1); 
+    } 
+    
+    #Plain-hart.ng-hide-add.ng-hide-add-active, #Plain-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: scale(1.5); 
+    }
+
+    /* #Solid-hart */
+    #Solid-hart { 
+        transition: 0.2s linear all; 
+        opacity: 1; 
+        transform: translateY(0px);
+    }
+    
+    #Solid-hart.ng-hide-add.ng-hide-add-active, #Solid-hart.ng-show-remove.ng-show-remove-active { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    
+    </style>
+
+<script>
+    // Optional: Add a simple preloader for images
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(image => {
+            const src = image.getAttribute('ng-src');
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                image.src = src; // Set the actual image source when it's loaded
+            };
+        });
+    });
+</script>
