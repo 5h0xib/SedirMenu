@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
+::selection {
+    background-color: #004e00;
+    color: white;
+}
+
 html{
     scroll-behavior: smooth;
 }
