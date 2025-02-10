@@ -31,8 +31,8 @@
     <p>Fill Out the Form and<br>We will Reach Out Shortly</p>
     <form name="contactForm" novalidate action="https://api.web3forms.com/submit?redirect=https://5h0xib.github.io/SedirMenu/success.html" method="post">
         <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+        <input type="hidden" name="redirect" value="https://5h0xib.github.io/SedirMenu/success.html">
         <h5>Contact Us</h5>
-        
         <input type="text" placeholder="name*" name="name" ng-model="contact.name" ng-required="true"/>
         <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
             <small>Enter a valid Name</small>

@@ -1,28 +1,95 @@
 <div class="fav-container">
-    <div class="fav-box">
-        <h1>Favorites</h1>
-        <div ng-if="favorites.length === 0">
-            <p>No favorites yet</p>
-        </div>
-        <p class="Total-price" ng-if="favorites.length > 0">Total: {{getTotal() | currency:' AED ':0}}</p> 
-        <div ng-repeat="item in favorites track by $index" class="item-box" ng-animate="'animate'">
-            <div class="details-box">
-                <div class="image-box">
-                    <img ng-src="{{item.image}}" alt="{{item.name}}">
-                </div>
-                <div class="item-details">
-                    <div class="item-name">{{item.name}}</div>
-                    <div class="price">{{item.rate | currency:'AED ':0}}</div>
-                </div>
+    <form name="Order" novalidate action="https://api.web3forms.com/submit" method="post">
+    <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+    <input type="hidden" name="redirect" value="https://5h0xib.github.io/SedirMenu/OrderPlaced.html">
+        <div class="fav-box">
+            <h1>Favorites</h1>
+            <div ng-if="favorites.length === 0">
+                <p>No favorites yet</p>
             </div>
-    
-            <i class="fa-regular fa-trash-can" ng-click="removeFromFavorites(item)"></i>
+            <p class="Total-price" ng-if="favorites.length > 0">Total: {{getTotal() | currency:' AED ':0}}</p>
+            
+            <div ng-repeat="item in favorites track by $index" class="item-box" ng-animate="'animate'">
+                <div class="details-box">
+                    <div class="image-box">
+                        <img ng-src="{{item.image}}" alt="{{item.name}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">{{item.name}}</div>
+                        <div class="price">{{item.rate | currency:'AED ':0}}</div>
+                    </div>
+                </div>
+                <i class="fa-regular fa-trash-can" ng-click="removeFromFavorites(item)"></i>
+
+                <!-- Hidden input for item name -->
+                <input type="hidden" name="item_name_{{$index}}" value="{{item.name}}">
+            </div>
         </div>
-    </div>    
+        
+        <div class="Order-Form" ng-if="favorites.length > 0">
+            <!-- Table number input -->
+            <input type="number" name="subject" id="subject" ng-model="formData.subject" 
+                   placeholder="Table Number" ng-required="true" 
+                   ng-class="{'error': Order.subject.$invalid && Order.subject.$touched}" />
+
+            <button type="submit" ng-disabled="Order.$invalid">Place Order</button>
+        </div>
+    </form>
 </div>
 
+
+
 <style>
-.fav-container {
+
+.Order-Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.Order-Form input[type="number"]{
+    padding: 7px;
+    font-size: 16px;
+    margin: 3px;
+    border: none;
+    box-shadow: 0px 0px 4px #00000057;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+.Order-Form input[type="number"]::-webkit-inner-spin-button,
+.Order-Form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.Order-Form button{
+    padding: 7px;
+    font-size: 16px;
+    margin: 3px;
+    border: none;
+    box-shadow: 0px 0px 4px #00000057;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+
+.Order-Form button:not(:disabled) {
+    background-color: #006618; /* Green when enabled */
+    color: white;
+}
+
+.Order-Form button:disabled {
+    background-color: #ccc; /* Gray when disabled */
+    color: #666;
+    cursor: not-allowed;
+}
+
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
