@@ -126,7 +126,12 @@ myApp.service('DataService', ['$http', function ($http) {
 
 // Service for managing favorites
 myApp.factory('FavoritesService', function () {
-    let favorites = [];
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    function saveToLocalStorage() {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+
     return {
         getFavorites: function () {
             return favorites;
@@ -134,6 +139,7 @@ myApp.factory('FavoritesService', function () {
         addFavorite: function (item) {
             if (!favorites.some(fav => fav.id === item.id)) {
                 favorites.push(item);
+                saveToLocalStorage();
                 return true; // Successfully added
             }
             return false; // Already exists
@@ -142,6 +148,7 @@ myApp.factory('FavoritesService', function () {
             const index = favorites.findIndex(fav => fav.id === item.id);
             if (index !== -1) {
                 favorites.splice(index, 1);
+                saveToLocalStorage();
                 return true; // Successfully removed
             }
             return false; // Not found
@@ -151,6 +158,8 @@ myApp.factory('FavoritesService', function () {
         }
     };
 });
+
+
 
 // Configure Routes
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -369,6 +378,14 @@ myApp.controller('FavoritesController', ['$scope', 'FavoritesService', function 
             return total + (item.rate || 0);
         }, 0);
     };
+
+    // MUFIZ BHAI CLEAR ALL FAVORITES KA FUNCTION BANAOO 
+    $scope.clearFavorites = function () {
+        localStorage.removeItem('favorites');
+        $scope.favorites = [];
+        location.reload(); 
+    };
+    
 }]);
 
 

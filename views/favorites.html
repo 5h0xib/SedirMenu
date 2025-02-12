@@ -1,7 +1,7 @@
 <div class="fav-container">
     <form name="Order" novalidate action="https://api.web3forms.com/submit" method="post">
-    <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
-    <input type="hidden" name="redirect" value="https://5h0xib.github.io/SedirMenu/OrderPlaced.html">
+        <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+        <input type="hidden" name="redirect" value="https://5h0xib.github.io/SedirMenu/OrderPlaced.html">
         <div class="fav-box">
             <h1>Favorites</h1>
             <div ng-if="favorites.length === 0">
@@ -25,16 +25,20 @@
                 <input type="hidden" name="item_name_{{$index}}" value="{{item.name}}">
             </div>
         </div>
-        
         <div class="Order-Form" ng-if="favorites.length > 0">
             <!-- Table number input -->
-            <input type="number" name="subject" id="subject" ng-model="formData.subject" 
+            <div>
+                <input type="number" name="subject" id="subject" ng-model="formData.subject" 
                    placeholder="Table Number" ng-required="true" 
                    ng-class="{'error': Order.subject.$invalid && Order.subject.$touched}" />
 
-            <button type="submit" ng-disabled="Order.$invalid">Place Order</button>
+                <button type="submit" ng-disabled="Order.$invalid">Place Order</button>
+            </div>
         </div>
     </form>
+    <div class="reset-div" ng-if="favorites.length > 0">
+        <button class="resetFavBtn" ng-click="clearFavorites()">Clear All</button>
+    </div>
 </div>
 
 
@@ -46,6 +50,25 @@
     justify-content: center;
     align-items: center;
     margin: 50px;
+    flex-direction: column;
+    width: 410px;
+}
+
+.fav-container .reset-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-container .reset-div .resetFavBtn{
+    padding: 7px;
+    font-size: 16px;
+    margin: 3px;
+    border: none;
+    box-shadow: 2px 2px 5px 1px #00000027;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
 }
 
 .Order-Form input[type="number"]{
